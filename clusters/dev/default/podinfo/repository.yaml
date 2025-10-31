@@ -3,6 +3,6 @@ kind: HelmRepository
 metadata:
   name: podinfo
   namespace: flux-system
-specs:
-  intervals: 1m
+spec:
+  interval: 1m
   url: https://stefanprodan.github.io/podinfo
