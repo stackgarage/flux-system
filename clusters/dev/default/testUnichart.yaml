@@ -1,0 +1,33 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: unichart
+  namespace: default
+spec:
+  releaseName: unichart
+  interval: 5m
+  chart:
+    spec:
+      chart: unichart
+      version: '*'
+      sourceRef:
+        kind: HelmRepository
+        name: tinycloud-labs
+        namespace: flux-system
+      interval: 1m
+  values:
+    # === Chart values ===
+    app:
+      name: excalidraw
+      image:
+        repository: excalidraw/excalidraw
+        tag: latest
+        pullPolicy: IfNotPresent
+
+      service:
+        port: 80
+        targetPort: 80
+    ingress:
+      enabled: true
+      host: draw2.shakir.cloud
+      ingressClassName: nginx
