@@ -1,3 +1,6 @@
+# TODO: this file might not be necessery if we add this in kustomization.yaml
+# resources:
+#   - shared-sources
 apiVersion: kustomize.toolkit.fluxcd.io/v1
 kind: Kustomization
 metadata:
