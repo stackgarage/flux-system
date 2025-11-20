@@ -1,15 +1,15 @@
 # TODO: this file might not be necessery if we add this in kustomization.yaml
 # resources:
 #   - shared-sources
-apiVersion: kustomize.toolkit.fluxcd.io/v1
-kind: Kustomization
-metadata:
-  name: shared-sources
-  namespace: flux-system
-spec:
-  interval: 10m
-  path: ./shared-sources
-  prune: true
-  sourceRef:
-    kind: GitRepository
-    name: flux-system
+# apiVersion: kustomize.toolkit.fluxcd.io/v1
+# kind: Kustomization
+# metadata:
+#   name: shared-sources
+#   namespace: flux-system
+# spec:
+#   interval: 10m
+#   path: ./shared-sources
+#   prune: true
+#   sourceRef:
+#     kind: GitRepository
+#     name: flux-system
