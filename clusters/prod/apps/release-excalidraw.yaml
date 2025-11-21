@@ -25,6 +25,8 @@ spec:
 
       replicaCount: 1
 
+      containerPort: "80"
+
       service:
         port: "80"
         targetPort: "80"
