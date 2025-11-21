@@ -1,8 +1,8 @@
 # Kustomization forapplying the shared patch
-# resources:
-#   - release-excalidraw.yaml
+resources:
+  - release-excalidraw.yaml
 
-# patches:
-#   - target:
-#       kind: HelmRelease
-#     path: common-patch.yaml
+patches:
+  - target:
+      kind: HelmRelease
+    path: common-patch.yaml
