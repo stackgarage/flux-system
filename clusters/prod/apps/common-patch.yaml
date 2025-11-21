@@ -1,9 +1,9 @@
 # Kustomize patch: common values for all HelmReleases
 # The patch will inject automatically into every release in this directory.
-# apiVersion: helm.toolkit.fluxcd.io/v2
-# kind: HelmRelease
-# metadata:
-#   name: not-used
-# spec:
-#   values:
-#     namespace: "apps"
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: not-used
+spec:
+  values:
+    namespace: "apps"
