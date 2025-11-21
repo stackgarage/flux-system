@@ -3,35 +3,38 @@ kind: HelmRelease
 metadata:
   name: excalidraw
   namespace: default
+
 spec:
   interval: 5m
   releaseName: excalidraw
+
   chart:
     spec:
       chart: unichart
-      version: '0.0.3'
+      version: "0.0.3"
       sourceRef:
         kind: HelmRepository
         name: tinycloud-labs
         namespace: flux-system
       interval: 1m
+
   values:
     app:
-      name: "excalidraw"
+      name: excalidraw
       image:
-        repository: "excalidraw/excalidraw"
-        tag: "latest"
+        repository: excalidraw/excalidraw
+        tag: latest
         pullPolicy: IfNotPresent
 
       replicaCount: 1
 
-      containerPort: "80"
+      containerPort: 80
 
       service:
-        port: "80"
-        targetPort: "80"
+        port: 80
+        targetPort: 80
 
     ingress:
       enabled: true
-      host: "draw.shakir.cloud"
+      host: draw.shakir.cloud
       ingressClassName: nginx
