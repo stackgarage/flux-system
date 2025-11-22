@@ -20,39 +20,49 @@ spec:
 
   values:
     app:
-      name: metube
+      name: s-pdf
       image:
-        repository: ghcr.io/alexta69/metube
+        repository: frooodle/s-pdf
         tag: latest
         pullPolicy: IfNotPresent
 
       replicaCount: 1
 
-      containerPort: 80
-
       service:
         port: 80
-        targetPort: 8081
+        targetPort: 8080
 
       volumeMounts:
-        - mountPath: /downloads
-          subPath: downloads
+        - mountPath: /customfiles
+          subPath: customfiles
+        - mountPath: /configs
+          subPath: configs
+        - mountPath: /usr/share/tessdata
+          subPath: tessdata
+
+      env:
+        - name: DOCKER_ENABLE_SECURITY
+          value: "true"
+        - name: INSTALL_BOOK_AND_ADVANCED_HTML_OPS
+          value: "false"
+        - name: LANGS
+          value: "en_US"
 
     ingress:
       enabled: true
-      host: metube.shakir.cloud
+      host: spdf.shakir.cloud
       ingressClassName: nginx
 
     nfspersistence:
       enabled: true
       persistence:
-        name: metube-pvc
+        name: spdf-pvc
         storageClassName: nfs-client
         accessMode: ReadWriteMany
         reclaimPolicy: Retain
         size: 200Mi
       labels:
-        app: "metube"
+        app: spdf
       annotations:
-        volume.kubernetes.io/description: "Shared volume for metube"
+        volume.kubernetes.io/description: "Shared volume for spdf"
         custom.synology/path-hint: "Dynamic Provision - Check the PVC-ID"
