@@ -51,11 +51,6 @@ spec:
         secretRefNames:
           - gaseous-server
 
-      envFromSecrets:
-        enabled: true
-        secretRefNames:
-          - gaseous-server
-
       readinessProbe:
         enabled: false
 
