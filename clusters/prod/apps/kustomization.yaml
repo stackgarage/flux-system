@@ -8,6 +8,8 @@ resources:
   - release-excalidraw.yaml
   - release-metube.yaml
   - release-omni-tools.yaml
+  - release-deemix.yaml
+  - release-spdf.yaml
 
 patches:
   - target:
