@@ -10,6 +10,8 @@ resources:
   - release-omni-tools.yaml
   - release-deemix.yaml
   - release-spdf.yaml
+  - release-gaseous.yaml
+  - release-speedtest.yaml
 
 patches:
   - target:
