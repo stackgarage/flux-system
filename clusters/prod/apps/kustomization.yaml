@@ -5,7 +5,8 @@ kind: Kustomization
 namespace: apps
 
 resources:
-  - release-test.yaml
+  - release-excalidraw.yaml
+  - release-metube.yaml
 
 patches:
   - target:
