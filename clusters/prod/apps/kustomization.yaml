@@ -1,6 +1,6 @@
 # Kustomization forapplying the shared patch
 resources:
-  - release-excalidraw.yaml
+  - release-test.yaml
 
 patches:
   - target:
