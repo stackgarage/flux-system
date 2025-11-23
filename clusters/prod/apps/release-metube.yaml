@@ -43,15 +43,12 @@ spec:
       host: metube.shakir.cloud
       ingressClassName: nginx
 
-    nfspersistence:
+    persistence:
       enabled: true
-      persistence:
-        name: metube-pvc
-        accessMode: ReadWriteMany
-        reclaimPolicy: Retain
-        size: 200Mi
-      labels:
-        app: "metube"
-      annotations:
-        volume.kubernetes.io/description: "Shared volume for metube"
-        custom.synology/path-hint: "Dynamic Provision - Check the PVC-ID"
+      name: metube-pvc
+      size: 200Mi
+      accessMode: ReadWriteMany
+      reclaimPolicy: Retain
+      nfs:
+        server: nas.shakir.cloud
+        path: /volume1/k3s-main

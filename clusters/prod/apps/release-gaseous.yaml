@@ -96,7 +96,6 @@ spec:
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
-
       nfs:
         server: nas.shakir.cloud
         path: /volume1/k3s-main
