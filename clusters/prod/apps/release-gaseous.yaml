@@ -92,15 +92,15 @@ spec:
 
     persistence:
       enabled: true
-      name: "gaseous"
+      name: gaseous
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
       storageClassName: nfs-client
 
       nfs:
-        server: "nas.shakir.cloud"
-        path: "/volume1/k3s-dev"
+        server: nas.shakir.cloud
+        path: /volume1/k3s-main
 
     ingress:
       enabled: true
