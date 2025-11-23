@@ -1,2 +1,3 @@
 resources:
   - ./tinycloud-labs.yaml
+  - ./ww-gitops.yaml
