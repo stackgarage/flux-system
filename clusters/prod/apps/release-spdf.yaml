@@ -53,16 +53,13 @@ spec:
       host: spdf.shakir.cloud
       ingressClassName: nginx
 
-    nfspersistence:
+    persistence:
       enabled: true
-      persistence:
-        name: spdf-pvc
-        storageClassName: nfs-client
-        accessMode: ReadWriteMany
-        reclaimPolicy: Retain
-        size: 200Mi
-      labels:
-        app: spdf
-      annotations:
-        volume.kubernetes.io/description: "Shared volume for spdf"
-        custom.synology/path-hint: "Dynamic Provision - Check the PVC-ID"
+      name: spdf-pvc
+      size: 200Mi
+      accessMode: ReadWriteMany
+      reclaimPolicy: Retain
+      storageClassName: nfs-client
+      nfs:
+        server: nas.shakir.cloud
+        path: /volume1/k3s-main
