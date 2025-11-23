@@ -1,110 +1,110 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: gaseous
-  namespace: default
+# apiVersion: helm.toolkit.fluxcd.io/v2
+# kind: HelmRelease
+# metadata:
+#   name: gaseous
+#   namespace: default
 
-spec:
-  interval: 5m
-  releaseName: gaseous
+# spec:
+#   interval: 5m
+#   releaseName: gaseous
 
-  chart:
-    spec:
-      chart: unichart
-      version: "0.0.3"
-      sourceRef:
-        kind: HelmRepository
-        name: tinycloud-labs
-        namespace: flux-system
-      interval: 1m
+#   chart:
+#     spec:
+#       chart: unichart
+#       version: "0.0.3"
+#       sourceRef:
+#         kind: HelmRepository
+#         name: tinycloud-labs
+#         namespace: flux-system
+#       interval: 1m
 
-  values:
-    app:
-      name: gaseous
-      image:
-        repository: gaseousgames/gaseousserver
-        tag: latest
-        pullPolicy: IfNotPresent
+#   values:
+#     app:
+#       name: gaseous
+#       image:
+#         repository: gaseousgames/gaseousserver
+#         tag: latest
+#         pullPolicy: IfNotPresent
 
-      replicaCount: 1
-      containerPort: 6595
+#       replicaCount: 1
+#       containerPort: 6595
 
-      service:
-        port: 80
-        targetPort: 6595
+#       service:
+#         port: 80
+#         targetPort: 6595
 
-      volumeMounts:
-        - mountPath: /root/.gaseous-server
-          subPath: "gs"
+#       volumeMounts:
+#         - mountPath: /root/.gaseous-server
+#           subPath: "gs"
 
-      dbHostname: "dbhost"
+#       dbHostname: "dbhost"
 
-      env:
-        - name: TZ
-          value: America/Los_Angeles
-        - name: dbuser
-          value: root
-        - name: dbpass
-          value: gaseous
-      envFromSecrets:
-        enabled: true
-        secretRefNames:
-          - gaseous-server
+#       env:
+#         - name: TZ
+#           value: America/Los_Angeles
+#         - name: dbuser
+#           value: root
+#         - name: dbpass
+#           value: gaseous
+#       envFromSecrets:
+#         enabled: true
+#         secretRefNames:
+#           - gaseous-server
 
-      readinessProbe:
-        enabled: false
+#       readinessProbe:
+#         enabled: false
 
-      livenessProbe:
-        enabled: false
-        command: []
-        initialDelaySeconds: 20
-        periodSeconds: 60
-        timeoutSeconds: 10
-        failureThreshold: 3
+#       livenessProbe:
+#         enabled: false
+#         command: []
+#         initialDelaySeconds: 20
+#         periodSeconds: 60
+#         timeoutSeconds: 10
+#         failureThreshold: 3
 
-    database:
-      enabled: true
-      host: gsdb
-      port: 3306
+#     database:
+#       enabled: true
+#       host: gsdb
+#       port: 3306
 
-      image:
-        repository: shakir85/bitnami-mariadb
-        tag: 30072025
-        pullPolicy: IfNotPresent
+#       image:
+#         repository: shakir85/bitnami-mariadb
+#         tag: 30072025
+#         pullPolicy: IfNotPresent
 
-      volumeMounts:
-        - mountPath: /bitnami/mariadb
-          subPath: gsdb
+#       volumeMounts:
+#         - mountPath: /bitnami/mariadb
+#           subPath: gsdb
 
-      env:
-        - name: ALLOW_EMPTY_PASSWORD
-          value: "yes"
-        - name: MARIADB_ROOT_PASSWORD
-          value: gaseous
-        - name: MARIADB_USER
-          value: gaseous
-        - name: MARIADB_PASSWORD
-          value: gaseous
-        - name: MARIADB_DISABLE_CHOWN
-          value: "yes"
+#       env:
+#         - name: ALLOW_EMPTY_PASSWORD
+#           value: "yes"
+#         - name: MARIADB_ROOT_PASSWORD
+#           value: gaseous
+#         - name: MARIADB_USER
+#           value: gaseous
+#         - name: MARIADB_PASSWORD
+#           value: gaseous
+#         - name: MARIADB_DISABLE_CHOWN
+#           value: "yes"
 
-      replicas: 1
+#       replicas: 1
 
-    persistence:
-      enabled: true
-      name: gaseous
-      size: 200Mi
-      accessMode: ReadWriteMany
-      reclaimPolicy: Retain
-      storageClassName: nfs-client
+#     persistence:
+#       enabled: true
+#       name: gaseous
+#       size: 200Mi
+#       accessMode: ReadWriteMany
+#       reclaimPolicy: Retain
+#       storageClassName: nfs-client
 
-      nfs:
-        server: nas.shakir.cloud
-        path: /volume1/k3s-main
+#       nfs:
+#         server: nas.shakir.cloud
+#         path: /volume1/k3s-main
 
-    ingress:
-      enabled: true
-      host: games.shakir.cloud
-      ingressClassName: nginx
+#     ingress:
+#       enabled: true
+#       host: games.shakir.cloud
+#       ingressClassName: nginx
 
-      port: 80
+#       port: 80
