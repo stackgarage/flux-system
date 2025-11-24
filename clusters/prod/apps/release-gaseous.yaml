@@ -98,7 +98,7 @@ spec:
       reclaimPolicy: Retain
       nfs:
         server: nas.shakir.cloud
-        path: /volume1/k3s-main
+        path: /volume1/k3s-main/gaseous
 
     ingress:
       enabled: true
