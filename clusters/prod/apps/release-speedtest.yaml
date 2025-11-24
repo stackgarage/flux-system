@@ -54,7 +54,6 @@ spec:
 
     persistence:
       enabled: true
-      # name: speedtest-unichart
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain

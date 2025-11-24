@@ -69,7 +69,7 @@ spec:
 
       image:
         repository: shakir85/bitnami-mariadb
-        tag: "30072025"
+        tag: latest
         pullPolicy: IfNotPresent
 
       volumeMounts:

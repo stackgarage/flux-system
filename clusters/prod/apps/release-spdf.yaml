@@ -55,7 +55,6 @@ spec:
 
     persistence:
       enabled: true
-      name: spdf-pvc
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
