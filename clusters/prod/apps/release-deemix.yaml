@@ -60,4 +60,4 @@ spec:
       reclaimPolicy: Retain
       nfs:
         server: nas.shakir.cloud
-        path: /volume1/k3s-main/deemix
+        path: /Volume1/k3s-main/deemix
