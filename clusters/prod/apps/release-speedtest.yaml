@@ -54,7 +54,7 @@ spec:
 
     persistence:
       enabled: true
-      name: speedtest-pvc
+      # name: speedtest-unichart
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
