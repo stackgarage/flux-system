@@ -1,63 +1,63 @@
-# apiVersion: helm.toolkit.fluxcd.io/v2
-# kind: HelmRelease
-# metadata:
-#   name: deemix
-#   namespace: default
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: deemix
+  namespace: default
 
-# spec:
-#   interval: 5m
-#   releaseName: deemix
+spec:
+  interval: 5m
+  releaseName: deemix
 
-#   chart:
-#     spec:
-#       chart: unichart
-#       version: "0.0.5"
-#       sourceRef:
-#         kind: HelmRepository
-#         name: tinycloud-labs
-#         namespace: flux-system
-#       interval: 1m
+  chart:
+    spec:
+      chart: unichart
+      version: "0.0.5"
+      sourceRef:
+        kind: HelmRepository
+        name: tinycloud-labs
+        namespace: flux-system
+      interval: 1m
 
-#   values:
-#     app:
-#       name: deemix
-#       image:
-#         repository: registry.gitlab.com/bockiii/deemix-docker
-#         tag: latest
-#         pullPolicy: IfNotPresent
+  values:
+    app:
+      name: deemix
+      image:
+        repository: registry.gitlab.com/bockiii/deemix-docker
+        tag: latest
+        pullPolicy: IfNotPresent
 
-#       replicaCount: 1
+      replicaCount: 1
 
-#       service:
-#         port: 80
-#         targetPort: 6595
+      service:
+        port: 80
+        targetPort: 6595
 
-#       volumeMounts:
-#         - mountPath: /downloads
-#           subPath: downloads
-#         - mountPath: /config
-#           subPath: config
+      volumeMounts:
+        - mountPath: /downloads
+          subPath: downloads
+        - mountPath: /config
+          subPath: config
 
-#       env:
-#         - name: PUID
-#           value: "1000"
-#         - name: PGID
-#           value: "1000"
-#         - name: UMASK_SET
-#           value: "022"
-#         - name: DEEMIX_SINGLE_USER
-#           value: "true"
+      env:
+        - name: PUID
+          value: "1000"
+        - name: PGID
+          value: "1000"
+        - name: UMASK_SET
+          value: "022"
+        - name: DEEMIX_SINGLE_USER
+          value: "true"
 
-#     ingress:
-#       enabled: true
-#       host: deemix.shakir.cloud
-#       ingressClassName: nginx
+    ingress:
+      enabled: true
+      host: deemix.shakir.cloud
+      ingressClassName: nginx
 
-#     persistence:
-#       enabled: true
-#       size: 200Mi
-#       accessMode: ReadWriteMany
-#       reclaimPolicy: Retain
-#       nfs:
-#         server: nas.shakir.cloud
-#         path: /volume1/k3s-main/deemix
+    persistence:
+      enabled: true
+      size: 200Mi
+      accessMode: ReadWriteMany
+      reclaimPolicy: Retain
+      nfs:
+        server: nas.shakir.cloud
+        path: /volume1/k3s-main/deemix
