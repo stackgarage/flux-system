@@ -1,3 +1,5 @@
 resources:
   - ./tinycloud-labs.yaml
   - ./ww-gitops.yaml
+  - ./jellyfin.yaml
+  - ./karakeep.yaml
