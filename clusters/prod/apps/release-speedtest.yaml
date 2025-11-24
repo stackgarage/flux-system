@@ -1,63 +1,63 @@
-apiVersion: helm.toolkit.fluxcd.io/v2
-kind: HelmRelease
-metadata:
-  name: speedtest
-  namespace: default
+# apiVersion: helm.toolkit.fluxcd.io/v2
+# kind: HelmRelease
+# metadata:
+#   name: speedtest
+#   namespace: default
 
-spec:
-  interval: 5m
-  releaseName: speedtest
+# spec:
+#   interval: 5m
+#   releaseName: speedtest
 
-  chart:
-    spec:
-      chart: unichart
-      version: "0.0.4"
-      sourceRef:
-        kind: HelmRepository
-        name: tinycloud-labs
-        namespace: flux-system
-      interval: 1m
+#   chart:
+#     spec:
+#       chart: unichart
+#       version: "0.0.4"
+#       sourceRef:
+#         kind: HelmRepository
+#         name: tinycloud-labs
+#         namespace: flux-system
+#       interval: 1m
 
-  values:
-    app:
-      name: speedtest
-      image:
-        repository: henrywhitaker3/speedtest-tracker
-        tag: latest
-        pullPolicy: IfNotPresent
+#   values:
+#     app:
+#       name: speedtest
+#       image:
+#         repository: henrywhitaker3/speedtest-tracker
+#         tag: latest
+#         pullPolicy: IfNotPresent
 
-      replicaCount: 1
-      containerPort: 80
+#       replicaCount: 1
+#       containerPort: 80
 
-      service:
-        port: 80
-        targetPort: 80
+#       service:
+#         port: 80
+#         targetPort: 80
 
-      volumeMounts:
-        - mountPath: /config
-          subPath: config
+#       volumeMounts:
+#         - mountPath: /config
+#           subPath: config
 
-      env:
-        - name: PUID
-          value: "1000"
-        - name: PGID
-          value: "1000"
-        - name: TZ
-          value: "America/Los_Angeles"
-        - name: OOKLA_EULA_GDPR
-          value: "true"
+#       env:
+#         - name: PUID
+#           value: "1000"
+#         - name: PGID
+#           value: "1000"
+#         - name: TZ
+#           value: "America/Los_Angeles"
+#         - name: OOKLA_EULA_GDPR
+#           value: "true"
 
-    ingress:
-      enabled: true
-      host: speedtest.shakir.cloud
-      ingressClassName: nginx
+#     ingress:
+#       enabled: true
+#       host: speedtest.shakir.cloud
+#       ingressClassName: nginx
 
-    persistence:
-      enabled: true
-      size: 200Mi
-      accessMode: ReadWriteMany
-      reclaimPolicy: Retain
-      storageClassName: nfs-client
-      nfs:
-        server: nas.shakir.cloud
-        path: /volume1/k3s-main
+#     persistence:
+#       enabled: true
+#       size: 200Mi
+#       accessMode: ReadWriteMany
+#       reclaimPolicy: Retain
+#       storageClassName: nfs-client
+#       nfs:
+#         server: nas.shakir.cloud
+#         path: /volume1/k3s-main
