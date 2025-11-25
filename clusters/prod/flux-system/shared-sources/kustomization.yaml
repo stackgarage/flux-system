@@ -3,3 +3,6 @@ resources:
   - ./ww-gitops.yaml
   - ./jellyfin.yaml
   - ./karakeep.yaml
+  - ./prometheus-stack.yaml
+  - ./grafana.yaml
+  
