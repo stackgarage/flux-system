@@ -27,11 +27,11 @@ spec:
         pullPolicy: IfNotPresent
 
       replicaCount: 1
-      containerPort: 6595
+      containerPort: 80
 
       service:
         port: 80
-        targetPort: 6595
+        targetPort: 80
 
       volumeMounts:
         - mountPath: /root/.gaseous-server
@@ -92,7 +92,6 @@ spec:
 
     persistence:
       enabled: true
-      # name: gaseous
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
