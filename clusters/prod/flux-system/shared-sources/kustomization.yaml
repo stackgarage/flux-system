@@ -5,4 +5,4 @@ resources:
   - ./karakeep.yaml
   - ./prometheus-stack.yaml
   - ./grafana.yaml
-  
+  - ./homepage.yaml
