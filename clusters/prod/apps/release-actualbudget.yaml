@@ -23,7 +23,7 @@ spec:
       name: actualbudget
       image:
         repository: docker.io/actualbudget/actual-server
-        tag: "sha-a9047bf"
+        tag: "sha-52d013c"
         pullPolicy: IfNotPresent
 
       replicaCount: 1
