@@ -3,18 +3,21 @@ kind: HelmRelease
 metadata:
   name: kube-prometheus-stack
   namespace: flux-system
+
 spec:
   interval: 5m
   releaseName: prometheus-stack
+
   chart:
     spec:
       chart: kube-prometheus-stack
-      version: 45.0.0
+      version: "45.0.0"
       sourceRef:
         kind: HelmRepository
         name: prometheus-community
         namespace: flux-system
       interval: 1m
+
   values:
     fullnameOverride: prometheus
     # Required for subcharts like Grafana
