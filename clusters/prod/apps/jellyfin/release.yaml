@@ -46,7 +46,7 @@ spec:
   valuesFrom:
     - kind: ConfigMap
       name: media-values
-      valuesKey: medoa-values.yaml
+      valuesKey: media-values.yaml
 
 ---
 apiVersion: helm.toolkit.fluxcd.io/v2
