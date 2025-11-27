@@ -7,7 +7,7 @@ namespace: apps
 resources:
   - actualbudget/
   - excalidraw/
-  - release-metube.yaml
+  - metube/
   - release-omni-tools.yaml
   - release-deemix.yaml
   - release-spdf.yaml
