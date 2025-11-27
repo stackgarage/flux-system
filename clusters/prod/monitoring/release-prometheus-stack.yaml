@@ -221,7 +221,6 @@ spec:
 
     defaultRules:
       create: true
-      create: true
       rules:
         alertmanager: true
         etcd: true
