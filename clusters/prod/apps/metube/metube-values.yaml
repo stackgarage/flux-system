@@ -1,0 +1,32 @@
+app:
+  name: metube
+  image:
+    repository: ghcr.io/alexta69/metube
+    tag: latest
+    pullPolicy: IfNotPresent
+
+  replicaCount: 1
+
+  containerPort: 80
+
+  service:
+    port: 80
+    targetPort: 8081
+
+  volumeMounts:
+    - mountPath: /downloads
+      subPath: downloads
+
+ingress:
+  enabled: true
+  host: metube.shakir.cloud
+  ingressClassName: nginx
+
+persistence:
+  enabled: true
+  size: 200Mi
+  accessMode: ReadWriteMany
+  reclaimPolicy: Retain
+  nfs:
+    server: synology.shakir.cloud
+    path: /volume1/k3s-main/metube

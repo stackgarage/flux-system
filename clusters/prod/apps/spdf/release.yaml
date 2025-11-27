@@ -1,0 +1,24 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: spdf
+  namespace: default
+
+spec:
+  interval: 5m
+  releaseName: spdf
+
+  chart:
+    spec:
+      chart: unichart
+      version: "0.0.4"
+      sourceRef:
+        kind: HelmRepository
+        name: tinycloud-labs
+        namespace: flux-system
+      interval: 1m
+
+  valuesFrom:
+    - kind: ConfigMap
+      name: spdf-values
+      valuesKey: values.yaml
