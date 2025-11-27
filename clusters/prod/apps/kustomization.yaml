@@ -12,6 +12,14 @@ resources:
   - release-spdf.yaml
   - release-gaseous.yaml
   - release-speedtest.yaml
+  - release-jellyfin.yaml
+  - release-jellyfin-config.yaml
+  - release-jellyfin-media.yaml
+  - release-actualbudget.yaml
+  - release-homepage.yaml
+  - release-paperless-ngx.yaml
+  - release-paperless-ngx-data.yaml
+  - release-karakeep.yaml
 
 patches:
   - target:
