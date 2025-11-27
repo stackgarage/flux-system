@@ -31,21 +31,6 @@ spec:
         ingressClassName: "nginx"
         hosts:
           - alertmanager.shakir.cloud
-      alertmanagerSpec:
-        affinity:
-          nodeAffinity:
-            requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-                - matchExpressions:
-                    - key: kubernetes.io/hostname
-                      operator: In
-                      values:
-                        - k3s-main-tc-1
-        tolerations:
-          - key: "dedicated"
-            operator: "Equal"
-            value: "monitoring"
-            effect: "NoSchedule"
 
     grafana:
       enabled: true
@@ -63,20 +48,6 @@ spec:
         ingressClassName: "nginx"
         hosts:
           - grafana.shakir.cloud
-      affinity:
-        nodeAffinity:
-          requiredDuringSchedulingIgnoredDuringExecution:
-            nodeSelectorTerms:
-              - matchExpressions:
-                  - key: kubernetes.io/hostname
-                    operator: In
-                    values:
-                      - k3s-main-tc-1
-      tolerations:
-        - key: "dedicated"
-          operator: "Equal"
-          value: "monitoring"
-          effect: "NoSchedule"
 
     prometheus:
       enabled: true
@@ -97,20 +68,6 @@ spec:
         walCompression: true
         scrapeInterval: 30s
         evaluationInterval: 30s
-        affinity:
-          nodeAffinity:
-            requiredDuringSchedulingIgnoredDuringExecution:
-              nodeSelectorTerms:
-                - matchExpressions:
-                    - key: kubernetes.io/hostname
-                      operator: In
-                      values:
-                        - k3s-main-tc-1
-        tolerations:
-          - key: "dedicated"
-            operator: "Equal"
-            value: "monitoring"
-            effect: "NoSchedule"
 
     prometheusOperator:
       enabled: true
