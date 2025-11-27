@@ -5,7 +5,8 @@ kind: Kustomization
 namespace: apps
 
 resources:
-  - release-excalidraw.yaml
+  # - release-excalidraw.yaml
+  - excalidraw/
   - release-metube.yaml
   - release-omni-tools.yaml
   - release-deemix.yaml
