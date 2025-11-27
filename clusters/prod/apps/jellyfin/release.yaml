@@ -1,0 +1,72 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin
+  namespace: default
+spec:
+  interval: 5m
+  releaseName: jellyfin
+  dependsOn:
+    - name: jellyfin-media
+      namespace: apps
+    - name: jellyfin-config
+      namespace: apps
+  chart:
+    spec:
+      chart: jellyfin
+      version: "2.5.0"
+      sourceRef:
+        kind: HelmRepository
+        name: jellyfin
+        namespace: flux-system
+      interval: 1m
+  valuesFrom:
+    - kind: ConfigMap
+      name: app-values
+      valuesKey: app-values.yaml
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin-media
+  namespace: default
+spec:
+  interval: 5m
+  releaseName: jellyfin-media
+  chart:
+    spec:
+      chart: nfspersistence
+      version: "0.3.1"
+      sourceRef:
+        kind: HelmRepository
+        name: tinycloud-labs
+        namespace: flux-system
+      interval: 1m
+  valuesFrom:
+    - kind: ConfigMap
+      name: media-values
+      valuesKey: medoa-values.yaml
+
+---
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: jellyfin-config
+  namespace: default
+spec:
+  interval: 5m
+  releaseName: jellyfin-config
+  chart:
+    spec:
+      chart: nfspersistence
+      version: "0.3.1"
+      sourceRef:
+        kind: HelmRepository
+        name: tinycloud-labs
+        namespace: flux-system
+      interval: 1m
+  valuesFrom:
+    - kind: ConfigMap
+      name: config-values
+      valuesKey: config-values.yaml
