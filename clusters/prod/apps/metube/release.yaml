@@ -11,9 +11,14 @@ spec:
   chart:
     spec:
       chart: unichart
-      version: "0.0.4"
+      version: "0.0.5"
       sourceRef:
         kind: HelmRepository
         name: tinycloud-labs
         namespace: flux-system
       interval: 1m
+
+  valuesFrom:
+    - kind: ConfigMap
+      name: metube-values
+      valuesKey: values.yaml
