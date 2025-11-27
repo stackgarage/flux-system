@@ -3,7 +3,8 @@ kind: HelmRelease
 metadata:
   name: not-used
 spec:
-  targetNamespace: monitoring
+  values:
+    namespace: "monitoring"
 
-metadata:
-  namespace: flux-system
+# metadata:
+#   namespace: flux-system
