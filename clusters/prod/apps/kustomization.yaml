@@ -16,6 +16,7 @@ resources:
   - release-jellyfin-config.yaml
   - release-jellyfin-media.yaml
   - release-actualbudget.yaml
+  - release-homepage.yaml
 
 patches:
   - target:
