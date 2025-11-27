@@ -17,6 +17,8 @@ resources:
   - release-jellyfin-media.yaml
   - release-actualbudget.yaml
   - release-homepage.yaml
+  - release-paperless-ngx.yaml
+  - release-release-paperless-ngx-data.yaml
 
 patches:
   - target:
