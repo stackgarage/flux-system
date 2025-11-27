@@ -6,10 +6,10 @@ namespace: apps
 
 resources:
   - actualbudget/
+  - deemix/
   - excalidraw/
   - metube/
-  - release-omni-tools.yaml
-  - release-deemix.yaml
+  - omni-tools/
   - release-spdf.yaml
   - release-gaseous.yaml
   - release-speedtest.yaml

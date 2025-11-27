@@ -1,0 +1,10 @@
+resources:
+  - release.yaml
+
+configMapGenerator:
+  - name: omni-tools-values
+    files:
+      - values.yaml=omni-tools-values.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
