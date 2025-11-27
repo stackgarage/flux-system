@@ -4,6 +4,7 @@ kind: Kustomization
 resources:
   - flux-system               # loads Flux infra
   - apps                      # loads HelmReleases
+  - monitoring                # loads HelmReleases
 
 # maybe namespace layering later? i don't know, I'm tired boss
 # - namespaces
