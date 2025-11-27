@@ -20,7 +20,7 @@ resources:
   - release-homepage.yaml
   - release-paperless-ngx.yaml
   - release-paperless-ngx-data.yaml
-  - release-karakeep.yaml
+  # - release-karakeep.yaml
 
 patches:
   - target:
