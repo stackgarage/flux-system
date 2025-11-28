@@ -5,7 +5,7 @@
 #   namespace: default
 
 # spec:
-#   interval: 5m
+#   interval: 1h0m0s
 #   releaseName: karakeep
 
 #   chart:
@@ -16,7 +16,7 @@
 #         kind: HelmRepository
 #         name: karakeep
 #         namespace: flux-system
-#       interval: 1m
+#       interval: 2h0m0s
 
 #   values:
 #     # IMPORTANT NOTE

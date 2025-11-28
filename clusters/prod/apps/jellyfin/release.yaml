@@ -4,7 +4,7 @@ metadata:
   name: jellyfin
   namespace: default
 spec:
-  interval: 5m
+  interval: 1h0m0s
   releaseName: jellyfin
   dependsOn:
     - name: jellyfin-media
@@ -19,7 +19,7 @@ spec:
         kind: HelmRepository
         name: jellyfin
         namespace: flux-system
-      interval: 1m
+      interval: 2h0m0s
   valuesFrom:
     - kind: ConfigMap
       name: jellyfin-app-values
@@ -32,7 +32,7 @@ metadata:
   name: jellyfin-media
   namespace: default
 spec:
-  interval: 5m
+  interval: 1h0m0s
   releaseName: jellyfin-media
   chart:
     spec:
@@ -42,7 +42,7 @@ spec:
         kind: HelmRepository
         name: tinycloud-labs
         namespace: flux-system
-      interval: 1m
+      interval: 2h0m0s
   valuesFrom:
     - kind: ConfigMap
       name: jellyfin-media-values
@@ -55,7 +55,7 @@ metadata:
   name: jellyfin-config
   namespace: default
 spec:
-  interval: 5m
+  interval: 1h0m0s
   releaseName: jellyfin-config
   chart:
     spec:
@@ -65,7 +65,7 @@ spec:
         kind: HelmRepository
         name: tinycloud-labs
         namespace: flux-system
-      interval: 1m
+      interval: 2h0m0s
   valuesFrom:
     - kind: ConfigMap
       name: jellyfin-config-values
