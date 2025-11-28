@@ -9,6 +9,9 @@ spec:
     kind: OCIRepository
     name: bitnami-wordpress
     namespace: flux-system
+  dependsOn:
+    - name: wordpress-data
+      namespace: apps
   valuesFrom:
     - kind: ConfigMap
       name: wordpress-values

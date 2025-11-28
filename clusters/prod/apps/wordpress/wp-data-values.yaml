@@ -11,4 +11,4 @@ persistence:
   reclaimPolicy: Retain
   nfs:
     server: synology.shakir.cloud
-    path: /volume1/k3s-main/pv-wordpress
+    path: /volume1/k3s-main/wordpress
