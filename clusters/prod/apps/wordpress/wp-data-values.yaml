@@ -1,0 +1,14 @@
+labels:
+  app: wordpress
+annotations:
+  volume.kubernetes.io/description: "Shared PVC for wordpress"
+  custom.synology/path-hint: "maps to /vol1/k3s-main/wordpress"
+
+persistence:
+  name: wordpress
+  size: 100Mi
+  accessMode: ReadWriteMany
+  reclaimPolicy: Retain
+  nfs:
+    server: synology.shakir.cloud
+    path: /volume1/k3s-main/wordpress
