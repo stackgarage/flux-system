@@ -13,12 +13,9 @@ resources:
   - jellyfin/
   - metube/
   - omni-tools/
+  - paperless-ngx/
   - spdf/
   - speedtest/
-  # - release-jellyfin.yaml
-  # - release-jellyfin-config.yaml
-  # - release-jellyfin-media.yaml
-  # - release-paperless-ngx.yaml
   # - release-paperless-ngx-data.yaml
   # - release-karakeep.yaml
 
