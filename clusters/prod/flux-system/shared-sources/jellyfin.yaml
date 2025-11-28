@@ -4,5 +4,5 @@ metadata:
   name: jellyfin
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1h0m0s
   url: https://jellyfin.github.io/jellyfin-helm

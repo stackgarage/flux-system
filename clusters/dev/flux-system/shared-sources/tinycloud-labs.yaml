@@ -4,5 +4,5 @@ metadata:
   name: tinycloud-labs
   namespace: flux-system
 spec:
-  interval: 5m
+  interval: 1h0m0s
   url: https://tinycloud-labs.github.io/helm

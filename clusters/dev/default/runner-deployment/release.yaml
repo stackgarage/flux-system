@@ -4,7 +4,7 @@ metadata:
   name: gha-runner-deployment
   namespace: default
 spec:
-  interval: 5m
+  interval: 1h0m0s
   releaseName: gha-runner-deployment
   chart:
     spec:
@@ -14,7 +14,7 @@ spec:
         kind: HelmRepository
         name: tinycloud-labs
         namespace: flux-system
-      interval: 1m
+      interval: 2h0m0s
   values:
     name: 'dev-runner'
     namespace: 'default'
