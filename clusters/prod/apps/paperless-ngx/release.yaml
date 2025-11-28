@@ -20,7 +20,7 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: app-values
+      name: paperless-app-values
       valuesKey: app-values.yaml
 
 ---
@@ -45,5 +45,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: data-values
+      name: paperless-data-values
       valuesKey: data-values.yaml

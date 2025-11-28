@@ -2,13 +2,13 @@ resources:
   - release.yaml
 
 configMapGenerator:
-  - name: app-values
+  - name: jellyfin-app-values
     files:
       - app-values.yaml=app-values.yaml
-  - name: media-values
+  - name: jellyfin-media-values
     files:
       - media-values.yaml=media-values.yaml
-  - name: config-values
+  - name: jellyfin-config-values
     files:
       - config-values.yaml=config-values.yaml
 

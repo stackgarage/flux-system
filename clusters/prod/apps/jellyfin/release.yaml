@@ -22,7 +22,7 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: app-values
+      name: jellyfin-app-values
       valuesKey: app-values.yaml
 
 ---
@@ -45,7 +45,7 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: media-values
+      name: jellyfin-media-values
       valuesKey: media-values.yaml
 
 ---
@@ -68,5 +68,5 @@ spec:
       interval: 1m
   valuesFrom:
     - kind: ConfigMap
-      name: config-values
+      name: jellyfin-config-values
       valuesKey: config-values.yaml
