@@ -4,7 +4,7 @@ kind: Kustomization
 namespace: monitoring
 
 resources:
-  - release-prometheus-stack.yaml
+  - prometheus/
   # - release-loki-stack.yaml
 
 patches:
