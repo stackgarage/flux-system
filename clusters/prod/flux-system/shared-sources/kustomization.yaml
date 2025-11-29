@@ -6,4 +6,3 @@ resources:
   - ./prometheus-stack.yaml
   - ./grafana.yaml
   - ./homepage.yaml
-  - ./bitnami.yaml
