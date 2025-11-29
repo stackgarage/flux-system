@@ -16,7 +16,6 @@ resources:
   - paperless-ngx/
   - spdf/
   - speedtest/
-  - wordpress/
   # - release-paperless-ngx-data.yaml
   # - release-karakeep.yaml
 
