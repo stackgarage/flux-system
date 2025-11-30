@@ -67,6 +67,8 @@ config:
         - Reddit:
             - abbr: RD
               href: https://reddit.com/
+        - Photopea:
+            - abbr: https://www.photopea.com/
 
   services:
       - Infrastructure:
@@ -145,6 +147,10 @@ config:
               description: Karakeep Bookmarks Manager
 
       - Utilities:
+          - Ntopng:
+              icon: mdi-security-network
+              href: https://ntopng.shakir.cloud
+              description: NtopNG Network Monitoring
           - S-pdf:
               icon: sh-stirling-pdf
               href: https://spdf.shakir.cloud
