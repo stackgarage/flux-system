@@ -68,7 +68,8 @@ config:
             - abbr: RD
               href: https://reddit.com/
         - Photopea:
-            - abbr: https://www.photopea.com/
+            - abbr: PP 
+              href: https://www.photopea.com/
 
   services:
       - Infrastructure:
