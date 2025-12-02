@@ -10,7 +10,7 @@ spec:
 
   chart:
     spec:
-      chart: unichart
+      chart: lubelogger
       version: "1.4.1"
       sourceRef:
         kind: HelmRepository
