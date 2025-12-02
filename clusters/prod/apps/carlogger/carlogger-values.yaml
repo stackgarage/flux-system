@@ -117,7 +117,7 @@ serviceAccount:
 
 secret:
   # -- Specifies whether a secret should be created.
-  create: true
+  create: false
   # -- Specifies name of a secret used to configure the LubeLogger's mail connection.
   # If not filled, uses full name.
   name: ""
