@@ -14,4 +14,4 @@ cluster-prod:
 
 flux-config:
   - changed-files:
-      - any-glob-to-any-file: "flux-system/**/*"
+      - any-glob-to-any-file: "clusters/**/flux-system/**/*"
