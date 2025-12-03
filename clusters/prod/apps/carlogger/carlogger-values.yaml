@@ -117,20 +117,20 @@ serviceAccount:
 
 secret:
   # -- Specifies whether a secret should be created.
-  create: false
+  create: true
   # -- Specifies name of a secret used to configure the LubeLogger's mail connection.
   # If not filled, uses full name.
-  name: ""
+  name: "joedoe"
   # -- Email server for the secret.
-  emailServer: ""
+  emailServer: "joedoe@joedoe.com"
   # -- Email from address for the secret.
-  emailFrom: ""
+  emailFrom: "joedoe@joedoe.com"
   # -- Port for the email server.
   port: 587
   # -- Username for the email server.
-  username: ""
+  username: "joedoe"
   # -- Password for the email server.
-  password: ""
+  password: "joedoe"
 
 persistence:
   data:
