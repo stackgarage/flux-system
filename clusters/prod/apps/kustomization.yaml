@@ -6,7 +6,7 @@ namespace: apps
 
 resources:
   - actualbudget/
-  - carlogger/
+  # - carlogger/
   - deemix/
   - excalidraw/
   - gaseous/
