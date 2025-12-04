@@ -68,7 +68,7 @@ config:
             - abbr: RD
               href: https://reddit.com/
         - Photopea:
-            - abbr: PP 
+            - abbr: PP
               href: https://www.photopea.com/
 
   services:
@@ -160,6 +160,10 @@ config:
               icon: sh-speedtest
               href: https://speedtest.shakir.cloud
               description: Internet Speed Test
+          - LubeLogger:
+              icon: sh-lubelogger
+              href: https://car.shakir.cloud
+              description: Car maintenance tracking
           - Omnitools:
               icon: sh-omnitools
               href: https://omnitools.shakir.cloud
