@@ -135,7 +135,7 @@ secret:
 persistence:
   data:
     # -- Enable/disable PVC creation for data.
-    enabled: false
+    enabled: true
     # -- Use an existing PVC if defined, otherwise create one.
     existingClaim: ""
     # -- Specify the StorageClass (if required).
