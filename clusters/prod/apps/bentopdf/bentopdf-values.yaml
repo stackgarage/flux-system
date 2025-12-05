@@ -7,8 +7,8 @@ app:
 
 # workaround to avoid a bug in the chart
   volumeMounts:
-    - mountPath: ""
-      subPath: ""
+    - mountPath: "/dummy"
+      subPath: "dummy"
 
   replicaCount: 1
 
