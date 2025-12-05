@@ -5,6 +5,11 @@ app:
     tag: latest
     pullPolicy: IfNotPresent
 
+# workaround to avoid a bug in the chart
+  volumeMounts:
+    - mountPath: ""
+      subPath: ""
+
   replicaCount: 1
 
   containerPort: 80
