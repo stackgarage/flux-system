@@ -6,6 +6,7 @@ namespace: apps
 
 resources:
   - actualbudget/
+  - bentopdf/
   - carlogger/
   - deemix/
   - excalidraw/
@@ -15,7 +16,7 @@ resources:
   - metube/
   - omni-tools/
   - paperless-ngx/
-  - spdf/
+  # - spdf/
   - speedtest/
   # - release-paperless-ngx-data.yaml
   # - release-karakeep.yaml
