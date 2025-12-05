@@ -7,7 +7,7 @@ app:
 
   replicaCount: 1
 
-  containerPort: 80
+  containerPort: 3000
 
   service:
     port: 80
