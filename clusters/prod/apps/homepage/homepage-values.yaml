@@ -152,9 +152,9 @@ config:
               icon: mdi-security-network
               href: https://ntopng.shakir.cloud
               description: NtopNG Network Monitoring
-          - S-pdf:
-              icon: sh-stirling-pdf
-              href: https://spdf.shakir.cloud
+          - BentoPDF:
+              icon: sh-bentopdf
+              href: https://bentopdf.shakir.cloud
               description: PDF Document Management
           - Speedtest:
               icon: sh-speedtest
@@ -170,28 +170,22 @@ config:
               description: OmniTools for various utilities
 
   widgets:
-    - resources:
-        # change backend to 'kubernetes' to use Kubernetes integration. Requires RBAC.
-        backend: resources
-        expanded: true
-        cpu: true
-        memory: true
     - search:
         provider: duckduckgo
         target: _blank
     ## Uncomment to enable Kubernetes integration
-    # - kubernetes:
-    #     cluster:
-    #       show: true
-    #       cpu: true
-    #       memory: true
-    #       showLabel: true
-    #       label: "cluster"
-    #     nodes:
-    #       show: true
-    #       cpu: true
-    #       memory: true
-    #       showLabel: true
+    - kubernetes:
+        cluster:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
+          label: "K3s Prod"
+        nodes:
+          show: true
+          cpu: true
+          memory: true
+          showLabel: true
   kubernetes:
     # change mode to 'cluster' to use RBAC service account
     mode: disable
