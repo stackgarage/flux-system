@@ -7,11 +7,11 @@ app:
 
   replicaCount: 1
 
-  containerPort: 3000
+  containerPort: 8080
 
   service:
     port: 80
-    targetPort: 80
+    targetPort: 8080
 
 ingress:
   enabled: true
