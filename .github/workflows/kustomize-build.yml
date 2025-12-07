@@ -20,11 +20,12 @@ jobs:
       - name: 'Kustomize Build'
         uses: karancode/kustomize-github-action@v1.3.2
         with:
-          kustomize_version: '3.8.10'
+          kustomize_version: '5.8.0'
           kustomize_build_dir: ${{ matrix.cluster.path }}
           kustomize_comment: true
           kustomize_output_file: "gitops/rendered.yaml"
           kustomize_build_options: "--load_restrictor none"
           enable_alpha_plugins: false
+          token: ${{ github.token }}
         env:
           GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
