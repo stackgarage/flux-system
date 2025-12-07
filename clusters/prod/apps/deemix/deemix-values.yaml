@@ -1,7 +1,7 @@
 app:
   name: deemix
   image:
-    repository: registry.gitlab.com/bockiii/deemix-docker
+    repository: ghcr.io/bambanah/deemix
     tag: latest
     pullPolicy: IfNotPresent
 
