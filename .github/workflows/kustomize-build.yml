@@ -1,0 +1,30 @@
+name: 'Kustomize Build'
+on:
+  - pull_request
+jobs:
+  kustomize:
+    runs-on: ubuntu-latest
+    strategy:
+      matrix:
+        cluster:
+          - path: clusters/prod
+            name: prod
+          - path: clusters/dev
+            name: dev
+    steps:
+      - name: 'Checkout'
+        uses: actions/checkout@v4
+        with:
+          ref: ${{ github.head_ref }}
+
+      - name: 'Kustomize Build'
+        uses: karancode/kustomize-github-action@v1.3.2
+        with:
+          kustomize_version: '3.0.0'
+          kustomize_build_dir: ${{ matrix.cluster.path }}
+          kustomize_comment: true
+          kustomize_output_file: "gitops/rendered.yaml"
+          kustomize_build_options: "--load_restrictor none"
+          enable_alpha_plugins: false
+        env:
+          GITHUB_ACCESS_TOKEN: ${{ secrets.GITHUB_TOKEN }}
