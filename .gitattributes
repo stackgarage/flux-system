@@ -1,0 +1,5 @@
+# Make all YAML files count
+*.yaml linguist-detectable=true
+*.yaml linguist-language=YAML
+*.yml linguist-detectable=true
+*.yml linguist-language=YAML
