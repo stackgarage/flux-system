@@ -5,7 +5,7 @@ namespace: monitoring
 
 resources:
   - prometheus/
-  # - release-loki-stack.yaml
+  - loki-stack
 
 patches:
   - target:

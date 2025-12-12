@@ -2,9 +2,9 @@ apiVersion: kustomize.config.k8s.io/v1beta1
 kind: Kustomization
 
 resources:
-  - flux-system               # loads Flux infra
-  - apps                      # loads HelmReleases
-  - monitoring                # loads HelmReleases
+  - flux-system
+  - apps
+  - monitoring
 
 # maybe namespace layering later? i don't know, I'm tired boss
 # - namespaces
