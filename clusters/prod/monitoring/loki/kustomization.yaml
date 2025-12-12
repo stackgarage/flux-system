@@ -1,0 +1,10 @@
+resources:
+  - release.yaml
+
+configMapGenerator:
+  - name: loki-values
+    files:
+      - values.yaml=loki-values.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
