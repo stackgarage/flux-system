@@ -88,8 +88,8 @@ promtail:
         - job_name: systemd-journal
           journal:
             path: /var/log/journal
-          labels:
-            job: systemd-journal
+            labels:
+              job: systemd-journal
 
 # drop noisy components
 pipeline_stages:
