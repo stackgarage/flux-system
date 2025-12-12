@@ -8,11 +8,6 @@ loki:
   limits_config:
     retention_period: 168h
 
-  # to reduce iops to NAS (if needed)
-  # chunk_idle_period: 5m       # increase chunk idle, collect a bit longer before flushing
-  # max_chunk_age: 10m          # allow larger chunks before rotation
-  # target_chunk_size: 1048576  # 1MiB target chunk (chart key name might vary)
-
   # prevent Loki from hoarding chunks
   compactor:
     enabled: true
@@ -38,13 +33,19 @@ loki:
         index:
           prefix: index_
           period: 24h
+          labels:
+            - namespace
+            - pod
+            - container
+            - node
+            - job
 
-# Contains snippts for a geneirc syslog, kube logs, and hosts journald
+# Contains snippets for a generic syslog, kube logs, and host journald
 promtail:
   enabled: true
   podLabels:
     syslog-receiver: "true"
-  # mount hosts journald
+  # mount host's journald
   extraVolumes:
     - name: journal
       hostPath:
@@ -67,6 +68,7 @@ promtail:
           relabel_configs:
             - source_labels: ['__syslog_message_hostname']
               target_label: 'host'
+
         - job_name: kubernetes-pods
           kubernetes_sd_configs:
             - role: pod
@@ -85,6 +87,7 @@ promtail:
             - action: replace
               source_labels: [__meta_kubernetes_pod_container_name]
               target_label: container
+
         - job_name: systemd-journal
           journal:
             path: /var/log/journal
