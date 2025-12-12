@@ -10,6 +10,15 @@ alertmanager:
     ingressClassName: "nginx"
     hosts:
       - alertmanager.shakir.cloud
+  # show logs in alerts
+  route:
+    routes: []
+  templates:
+    - /etc/alertmanager/config/*.tmpl
+  receivers:
+    - name: loki-receiver
+      webhook_configs:
+        - url: http://loki-stack.monitoring.svc.cluster.local:3100/loki/api/v1/push
 
 grafana:
   enabled: true
