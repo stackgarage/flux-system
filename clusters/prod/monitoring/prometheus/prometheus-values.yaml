@@ -27,6 +27,13 @@ grafana:
     ingressClassName: "nginx"
     hosts:
       - grafana.shakir.cloud
+  # allows pod auto-discovery when a pod is labeled with: metadata.labels.grafana_dashboard: "1"
+  sidecar:
+    dashboards:
+      enabled: true
+      label: grafana_dashboard
+    datasources:
+      enabled: true
 
 prometheus:
   enabled: true
@@ -42,7 +49,7 @@ prometheus:
     serviceMonitorSelectorNilUsesHelmValues: false
     podMonitorSelectorNilUsesHelmValues: false
     probeSelectorNilUsesHelmValues: false
-    retention: 6h
+    retention: 24h
     enableAdminAPI: true
     walCompression: true
     scrapeInterval: 30s
@@ -51,6 +58,8 @@ prometheus:
     serviceMonitorNamespaceSelector: {}
     podMonitorNamespaceSelector: {}
     probeNamespaceSelector: {}
+    # helps with dashboard drill-downs like node -> pod -> container navigation
+    scrapeMetadata: true
 
 prometheusOperator:
   enabled: true
@@ -73,6 +82,10 @@ kubelet:
         sourceLabels:
           - node
         targetLabel: instance
+    # container cpu/memory, node filesystem, runtime, and liveness/readiness probe metrics
+    https: true
+    cAdvisor: true
+    probes: true
 
 kubeControllerManager:
   enabled: true
@@ -196,3 +209,10 @@ defaultRules:
     nodeMemoryUtilization: true
     nodeMemoryAvailable: true
     nodeMemorySwap: true
+
+# lokiStack:
+#   grafana:
+#     enabled: false # you already have Grafana
+#   promtail:
+#     enabled: true
+#     extraScrapeConfigs: []
