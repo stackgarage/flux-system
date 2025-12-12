@@ -1,0 +1,114 @@
+loki:
+  enabled: true
+  persistence:
+    enabled: true
+    storageClassName: "nfs-client"
+
+  # data lifecycle = 7 days
+  limits_config:
+    retention_period: 168h
+
+  # to reduce iops to NAS (if needed)
+  # chunk_idle_period: 5m       # increase chunk idle, collect a bit longer before flushing
+  # max_chunk_age: 10m          # allow larger chunks before rotation
+  # target_chunk_size: 1048576  # 1MiB target chunk (chart key name might vary)
+
+  # prevent Loki from hoarding chunks
+  compactor:
+    enabled: true
+    retention_enabled: true
+    delete_request_store: filesystem   # required when object store = filesystem (e.g. PVC through NFS)
+    shared_store: filesystem           # required for NFS/PVC backend
+
+    # compactor needs its own persistent volume
+    persistentVolume:
+      enabled: true
+      size: 1Gi
+
+    # Where compactor writes its temp files inside the PV
+    working_directory: /var/loki/compactor
+
+  # reduce wasted space on my potato storage/clusters
+  schema_config:
+    configs:
+      - from: "2020-10-24"
+        store: boltdb-shipper
+        object_store: filesystem
+        schema: v11
+        index:
+          prefix: index_
+          period: 24h
+
+# Contains snippts for a geneirc syslog, kube logs, and hosts journald
+promtail:
+  enabled: true
+  podLabels:
+    syslog-receiver: "true"
+  # mount hosts journald
+  extraVolumes:
+    - name: journal
+      hostPath:
+        path: /var/log/journal
+
+  extraVolumeMounts:
+    - name: journal
+      mountPath: /var/log/journal
+      readOnly: true
+  config:
+    snippets:
+      extraScrapeConfigs: |
+        - job_name: syslog
+          syslog:
+            listen_address: 0.0.0.0:1514
+            idle_timeout: 60s
+            label_structured_data: yes
+            labels:
+              job: "syslog"
+          relabel_configs:
+            - source_labels: ['__syslog_message_hostname']
+              target_label: 'host'
+        - job_name: kubernetes-pods
+          kubernetes_sd_configs:
+            - role: pod
+          pipeline_stages:
+            - cri: {}
+          relabel_configs:
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_node_name]
+              target_label: node
+            - action: replace
+              source_labels: [__meta_kubernetes_namespace]
+              target_label: namespace
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_name]
+              target_label: pod
+            - action: replace
+              source_labels: [__meta_kubernetes_pod_container_name]
+              target_label: container
+        - job_name: systemd-journal
+          journal:
+            path: /var/log/journal
+          labels:
+            job: systemd-journal
+
+# drop noisy components
+pipeline_stages:
+  - drop:
+      expression: "level=debug"
+  - drop:
+      source: Kubernetes
+      expression: "kubelet"
+  - multiline:
+      firstline: '^\S'
+
+# if needed, encrypt logs traffic
+# extraArgs:
+#   - -client.tls-config.insecure-skip-verify=true
+#   - -server.tls-config.insecure-skip-verify=true
+
+# Grafana and Prometheus are deployed separately
+grafana:
+  enabled: false
+
+prometheus:
+  enabled: false
