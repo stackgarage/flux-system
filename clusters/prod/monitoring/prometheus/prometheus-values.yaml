@@ -44,6 +44,22 @@ grafana:
     datasources:
       enabled: true
 
+  # Grafana data sources
+  additionalDataSources:
+    - name: Prometheus
+      uid: prometheus
+      type: prometheus
+      access: proxy
+      url: http://prometheus-prometheus.monitoring.svc.cluster.local:9090
+      isDefault: true
+
+    - name: Loki-Stack
+      uid: loki-stack
+      type: loki
+      access: proxy
+      url: http://loki-stack.monitoring.svc.cluster.local:3100
+      isDefault: true
+
 prometheus:
   enabled: true
   ingress:
