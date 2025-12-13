@@ -4,6 +4,27 @@ loki:
     enabled: true
     storageClassName: "nfs-client"
 
+  # control log writes
+  limits_config:
+    # data lifecycle = 7 days
+    retention_period: 168h
+
+    # caps per-tenant write speed, don't hammer the NAS with too much small writes
+    ingestion_rate_mb: 4
+    ingestion_burst_size_mb: 8
+
+    # flushing small chunks, no open-files for long time
+    max_chunk_age: 1h
+
+  # prevent Loki from hoarding chunks
+  compactor:
+    enabled: true
+    retention_enabled: true
+    delete_request_store: filesystem           # required when object store = filesystem (e.g. PVC through NFS)
+    shared_store: filesystem                   # required for NFS/PVC backend
+    retention_delete_delay: 2h                 # avoids deleting data that might still be referenced
+    working_directory: /var/loki/compactor     # where compactor writes its temp files inside the PV
+
 promtail:
   enabled: true
   podLabels:
@@ -11,12 +32,59 @@ promtail:
   config:
     snippets:
       extraScrapeConfigs: |
+        # Scraping job for: journald
+        - job_name: systemd-journal
+          journal:
+            path: /var/log/journal
+            labels:
+              job: systemd-journal
+
+        # Scraping job for: syslogs
+        - job_name: syslog
+          syslog:
+            listen_address: 0.0.0.0:1514
+            idle_timeout: 60s
+            label_structured_data: yes
+            labels:
+              job: "syslog"
+          relabel_configs:
+            - source_labels: ['__syslog_message_hostname']
+              target_label: 'host'
+
+        # Scraping jobs for: pods, namespaces, containers
         - job_name: kubernetes-pods
           kubernetes_sd_configs:
             - role: pod
 
           pipeline_stages:
             - cri: {}
+          # Normalize case (e.g. Debug / DEBUG / debug -> debug)
+          - template:
+              source: level
+              template: '{{ ToLower .Value }}'
+            - regex:
+                expression: '^\d+\s+\d+:\s+(?P<level>\w+):'
+            - match:
+                selector: '{level="information"}'
+                stages:
+                  - drop: {}
+            - drop:
+                expression: "level=debug"
+
+            # Drop everything non-critical
+            # - regex:
+            #     expression: '^\d+\s+\d+:\s+(?P<level>\w+):'
+            # - match:
+            #     selector: '{level!="warning",level!="error",level!="critical"}'
+            #     stages:
+            #       - drop: {}
+
+            # Drop specific container's logs w/out regex
+            # - match:
+            #     selector: '{container="add-container-name-here"}'
+            #     stages:
+            #       - drop:
+            #           expression: 'Information:' # add exact log level here
 
           relabel_configs:
             - action: replace
