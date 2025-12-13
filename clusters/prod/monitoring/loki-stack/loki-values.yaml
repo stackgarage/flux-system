@@ -64,11 +64,6 @@ promtail:
                 selector: '{level="Information"}'
                 stages:
                   - drop: {}
-            - match:
-                selector: '{}'
-                stages:
-                  - drop:
-                      expression: '(?i)\bdebug\b'
 
             # Drop everything non-critical
             # - regex:
