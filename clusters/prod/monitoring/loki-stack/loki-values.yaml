@@ -59,9 +59,9 @@ promtail:
           pipeline_stages:
             - cri: {}
           # Normalize case (e.g. Debug / DEBUG / debug -> debug)
-          - template:
-              source: level
-              template: '{{ ToLower .Value }}'
+            - template:
+                source: level
+                template: '{{ ToLower .Value }}'
             - regex:
                 expression: '^\d+\s+\d+:\s+(?P<level>\w+):'
             - match:
