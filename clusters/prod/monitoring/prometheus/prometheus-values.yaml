@@ -45,6 +45,7 @@ grafana:
       labelValue: "1"
       folderAnnotation: grafana_folder
       searchNamespace: monitoring
+
     datasources:
       enabled: true
 
@@ -65,8 +66,8 @@ grafana:
           access: proxy
           url: http://alertmanager-operated.monitoring.svc.cluster.local:9093
 
-        - name: Loki-Stack
-          uid: loki-stack
+        - name: Loki
+          uid: loki
           type: loki
           access: proxy
           url: http://loki-stack.monitoring.svc.cluster.local:3100
