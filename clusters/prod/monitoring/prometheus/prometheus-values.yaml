@@ -41,18 +41,32 @@ grafana:
     dashboards:
       enabled: true
       label: grafana_dashboard
+      labelValue: "1"
+      folderAnnotation: grafana_folder
+      searchNamespace: monitoring
+
     datasources:
       enabled: true
+      defaultDatasourceEnabled: true
+      isDefaultDatasource: true
 
-  # Grafana data sources
-  additionalDataSources:
-    - name: Prometheus
+      name: Prometheus
       uid: prometheus
-      type: prometheus
-      access: proxy
-      url: http://prometheus-prometheus.monitoring.svc.cluster.local:9090
-      isDefault: true
 
+      url: http://prometheus-prometheus.monitoring.svc.cluster.local:9090
+      createPrometheusReplicasDatasources: false
+      prometheusServiceName: prometheus-operated
+      label: grafana_datasource
+      labelValue: "1"
+
+      alertmanager:
+        enabled: true
+        name: Alertmanager
+        uid: alertmanager
+        handleGrafanaManagedAlerts: false
+        implementation: prometheus
+
+  additionalDataSources:
     - name: Loki-Stack
       uid: loki-stack
       type: loki
