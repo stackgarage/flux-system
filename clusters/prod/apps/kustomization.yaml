@@ -16,7 +16,6 @@ resources:
   - metube/
   - omni-tools/
   - paperless-ngx/
-  # - spdf/
   - speedtest/
   # - release-paperless-ngx-data.yaml
   # - release-karakeep.yaml
