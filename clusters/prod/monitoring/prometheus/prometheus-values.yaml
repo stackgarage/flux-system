@@ -31,7 +31,9 @@ grafana:
       enabled: true
       org_role: Viewer
       hide_version: true
+
     users:
+      default_theme: dark
       viewers_can_edit: false
     analytics:
       reporting_enabled: false
@@ -41,7 +43,8 @@ grafana:
     help:
       enabled: false
     dashboards:
-      default_home_dashboard_path: /var/lib/grafana/dashboards/General/k8s-addons-prometheus.json
+      min_refresh_interval: 30s
+      default_home_dashboard_uid: efa86fd1d0c121a26444b636a3f509a8
 
   serviceMonitor:
     enabled: true
