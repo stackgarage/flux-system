@@ -46,7 +46,7 @@ grafana:
       folderAnnotation: grafana_folder
       searchNamespace: monitoring
     datasources:
-      enabled: false
+      enabled: true
 
   datasources:
     datasources.yaml:
