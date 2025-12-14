@@ -58,12 +58,6 @@ promtail:
 
           pipeline_stages:
             - cri: {}
-            - regex:
-                expression: '^\d+\s+\d+:\s+(?P<level>\w+):'
-            - match:
-                selector: '{level="Information"}'
-                stages:
-                  - drop: {}
 
             # Drop everything non-critical
             # - regex:
