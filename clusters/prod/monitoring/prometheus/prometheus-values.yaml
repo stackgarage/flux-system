@@ -65,13 +65,11 @@ grafana:
           access: proxy
           url: http://alertmanager-operated.monitoring.svc.cluster.local:9093
 
-  additionalDataSources:
-    - name: Loki-Stack
-      uid: loki-stack
-      type: loki
-      access: proxy
-      url: http://loki-stack.monitoring.svc.cluster.local:3100
-      isDefault: false
+        - name: Loki-Stack
+          uid: loki-stack
+          type: loki
+          access: proxy
+          url: http://loki-stack.monitoring.svc.cluster.local:3100
 
 prometheus:
   enabled: true
