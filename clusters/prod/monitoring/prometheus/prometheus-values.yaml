@@ -27,6 +27,12 @@ grafana:
   defaultDashboardsTimezone: "America/Los_Angeles"
 
   grafana.ini:
+    auth.anonymous:
+      enabled: true
+      org_role: Viewer
+      hide_version: true
+    users:
+      viewers_can_edit: false
     analytics:
       reporting_enabled: false
       check_for_updates: false
