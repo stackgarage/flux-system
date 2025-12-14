@@ -72,7 +72,7 @@ grafana:
       type: loki
       access: proxy
       url: http://loki-stack.monitoring.svc.cluster.local:3100
-      isDefault: true
+      isDefault: false
 
 prometheus:
   enabled: true
