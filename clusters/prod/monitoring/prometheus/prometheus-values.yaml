@@ -25,12 +25,24 @@ grafana:
   fullnameOverride: grafana
   defaultDashboardsEnabled: true
   defaultDashboardsTimezone: "America/Los_Angeles"
+
+  grafana.ini:
+    analytics:
+      reporting_enabled: false
+      check_for_updates: false
+    news:
+      news_feed_enabled: false
+    help:
+      enabled: false
+
   serviceMonitor:
     enabled: true
+
   admin:
     existingSecret: grafana-admin-credentials
     userKey: admin-user
     passwordKey: admin-password
+
   ingress:
     enabled: true
     ingressClassName: "nginx"
