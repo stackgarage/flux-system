@@ -29,6 +29,10 @@ promtail:
   enabled: true
   podLabels:
     syslog-receiver: "true"
+  extraPorts:
+    - name: syslog
+      containerPort: 1514
+      protocol: TCP
   config:
     snippets:
       extraScrapeConfigs: |
