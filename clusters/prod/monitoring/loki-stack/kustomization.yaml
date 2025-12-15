@@ -1,5 +1,6 @@
 resources:
   - release.yaml
+  - promtail-syslog-svc.yaml
 
 configMapGenerator:
   - name: loki-values
