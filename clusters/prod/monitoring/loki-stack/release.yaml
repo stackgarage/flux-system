@@ -59,11 +59,11 @@ spec:
         snippets:
           extraScrapeConfigs: |
             # Scraping job for: journald
-            - job_name: systemd-journal
-              journal:
-                path: /var/log/journal
-                labels:
-                  job: systemd-journal
+            # - job_name: systemd-journal
+            #   journal:
+            #     path: /var/log/journal
+            #     labels:
+            #       job: systemd-journal
 
             # Scraping job for: syslogs
             - job_name: syslog
