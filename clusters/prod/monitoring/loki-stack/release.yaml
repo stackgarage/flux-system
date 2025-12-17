@@ -50,10 +50,11 @@ spec:
       enabled: true
       podLabels:
         syslog-receiver: "true"
-      # extraPorts:
-      #   - name: syslog
-      #     containerPort: 1514
-      #     protocol: TCP
+      service:
+        extraPorts:
+          syslog:
+            port: 1514
+            targetPort: 1514
       config:
         snippets:
           extraScrapeConfigs: |
