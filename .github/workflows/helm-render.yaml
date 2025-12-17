@@ -1,0 +1,32 @@
+name: Helm Template
+
+on:
+  pull_request:
+    paths:
+      - 'clusters/**'
+  workflow_dispatch:
+
+jobs:
+  helm-template:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Setup Helm
+        uses: azure/setup-helm@v4
+        with:
+          version: v3.14.4
+
+      - name: Add Helm repo
+        run: |
+          helm repo add grafana https://grafana.github.io/helm-charts
+          helm repo update
+
+      - name: Helm template
+        run: |
+          helm template loki-stack grafana/loki-stack \
+            --values clusters/prod/loki-values.yaml \
+            --namespace monitoring \
+            --include-crds \
+            > rendered.yaml
