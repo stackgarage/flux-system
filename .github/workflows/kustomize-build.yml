@@ -25,6 +25,6 @@ jobs:
           kustomize_build_dir: ${{ matrix.cluster.path }}
           kustomize_comment: true
           kustomize_output_file: "gitops/rendered.yaml"
-          kustomize_build_options: "--load_restrictor none"
+          kustomize_build_options: "--load-restrictor=LoadRestrictionsNone"
           enable_alpha_plugins: false
           token: ${{ secrets.GITHUB_TOKEN }}
