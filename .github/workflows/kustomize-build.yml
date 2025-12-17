@@ -1,5 +1,9 @@
 name: 'Kustomize Build'
 on:
+  pull_request:
+    paths:
+      - 'clusters/prod/**'
+      - 'clusters/dev/**'
   workflow_dispatch:
 
 jobs:
