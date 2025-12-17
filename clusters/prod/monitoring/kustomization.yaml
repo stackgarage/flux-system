@@ -5,7 +5,7 @@ namespace: monitoring
 
 resources:
   - prometheus
-  # - loki-stack
+  - loki-stack
   - dashboards
 
 patches:
