@@ -58,13 +58,6 @@ spec:
       config:
         snippets:
           extraScrapeConfigs: |
-            # Scraping job for: journald
-            # - job_name: systemd-journal
-            #   journal:
-            #     path: /var/log/journal
-            #     labels:
-            #       job: systemd-journal
-
             # Scraping job for: syslogs
             - job_name: syslog
               syslog:
@@ -84,21 +77,6 @@ spec:
 
               pipeline_stages:
                 - cri: {}
-
-                # Drop everything non-critical
-                # - regex:
-                #     expression: '^\d+\s+\d+:\s+(?P<level>\w+):'
-                # - match:
-                #     selector: '{level!="warning",level!="error",level!="critical"}'
-                #     stages:
-                #       - drop: {}
-
-                # Drop specific container's logs w/out regex
-                # - match:
-                #     selector: '{container="add-container-name-here"}'
-                #     stages:
-                #       - drop:
-                #           expression: 'Information:' # add exact log level here
 
               relabel_configs:
                 - action: replace
