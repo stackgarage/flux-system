@@ -47,7 +47,7 @@ promtail:
               job: "syslog"
           relabel_configs:
             - source_labels: ['__syslog_message_hostname']
-              target_label: 'syslog'
+              target_label: 'host'
 
         # Scraping jobs for: pods, namespaces, containers
         - job_name: kubernetes-pods
