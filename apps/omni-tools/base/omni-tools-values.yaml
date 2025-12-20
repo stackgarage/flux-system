@@ -2,18 +2,10 @@ app:
   name: omnitools
   image:
     repository: iib0011/omni-tools
-    tag: latest
     pullPolicy: IfNotPresent
-
-  replicaCount: 1
 
   containerPort: 80
 
   service:
     port: 80
     targetPort: 80
-
-ingress:
-  enabled: true
-  host: omnitools.shakir.cloud
-  ingressClassName: nginx
