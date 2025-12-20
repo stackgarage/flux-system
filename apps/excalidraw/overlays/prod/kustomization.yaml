@@ -7,5 +7,5 @@ resources:
 patches:
   - target:
       kind: HelmRelease
-      name: exacalidraw
+      name: excalidraw
     path: patch.yaml
