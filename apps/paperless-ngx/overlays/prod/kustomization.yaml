@@ -6,8 +6,10 @@ resources:
 
 patches:
   - target:
-      group: helm.toolkit.fluxcd.io
-      version: v2
       kind: HelmRelease
-      name: jellyfin
+      name: paperless-ngx
     path: patch.yaml
+  - target:
+      kind: HelmRelease
+      name: paperless-ngx-data
+    path: patch-data.yaml
