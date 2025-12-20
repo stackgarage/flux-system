@@ -2,10 +2,7 @@ app:
   name: actualbudget
   image:
     repository: docker.io/actualbudget/actual-server
-    tag: "sha-52d013c"
     pullPolicy: IfNotPresent
-
-  replicaCount: 1
 
   service:
     port: 80
@@ -22,17 +19,3 @@ app:
     periodSeconds: 60
     timeoutSeconds: 10
     failureThreshold: 3
-
-ingress:
-  enabled: true
-  host: budget.shakir.cloud
-  ingressClassName: nginx
-
-persistence:
-  enabled: true
-  size: 200Mi
-  accessMode: ReadWriteMany
-  reclaimPolicy: Retain
-  nfs:
-    server: synology.shakir.cloud
-    path: /volume1/k3s-main/actualbudget
