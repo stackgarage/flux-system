@@ -7,12 +7,12 @@ namespace: apps
 
 resources:
   - actualbudget/
-  - bentopdf/
+  - ../../../apps/bentopdf/overlays/prod
   - carlogger/
-  - deemix/
+  - ../../../apps/deemix/overlays/prod
   - ../../../apps/excalidraw/overlays/prod
   - gaseous/
-  - homepage/
+  - ../../../apps/homepage/overlays/prod
   - jellyfin/
   - metube/
   - omni-tools/

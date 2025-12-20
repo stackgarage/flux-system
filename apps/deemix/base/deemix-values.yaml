@@ -2,10 +2,7 @@ app:
   name: deemix
   image:
     repository: ghcr.io/bambanah/deemix
-    tag: latest
     pullPolicy: IfNotPresent
-
-  replicaCount: 1
 
   service:
     port: 80
@@ -27,16 +24,4 @@ app:
     - name: DEEMIX_SINGLE_USER
       value: "true"
 
-ingress:
-  enabled: true
-  host: deemix.shakir.cloud
-  ingressClassName: nginx
 
-persistence:
-  enabled: true
-  size: 200Mi
-  accessMode: ReadWriteMany
-  reclaimPolicy: Retain
-  nfs:
-    server: synology.shakir.cloud
-    path: /volume1/k3s-main/deemix
