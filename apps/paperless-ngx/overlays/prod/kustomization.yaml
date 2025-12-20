@@ -9,3 +9,7 @@ patches:
       kind: HelmRelease
       name: paperless-ngx
     path: patch.yaml
+  - target:
+      kind: HelmRelease
+      name: paperless-ngx-data
+    path: patch-data.yaml
