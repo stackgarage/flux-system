@@ -12,7 +12,7 @@ resources:
   - ../../../apps/deemix/overlays/prod
   - ../../../apps/excalidraw/overlays/prod
   - gaseous/
-  - ../../../homepage/overlays/prod
+  - ../../../apps/homepage/overlays/prod
   - jellyfin/
   - metube/
   - omni-tools/
