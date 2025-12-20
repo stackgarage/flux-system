@@ -4,6 +4,8 @@ apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
   name: not-used
+# Helm chart namespace value:
+# this might be duplicate of what's in kustomization.yaml but most of my charts consumes this value so... whatever
 spec:
   values:
     namespace: "apps"
