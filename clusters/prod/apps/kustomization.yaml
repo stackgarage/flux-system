@@ -6,16 +6,16 @@ kind: Kustomization
 namespace: apps
 
 resources:
-  - actualbudget/
+  - ../../../apps/actualbudget/overlays/prod
   - ../../../apps/bentopdf/overlays/prod
   - carlogger/
   - ../../../apps/deemix/overlays/prod
   - ../../../apps/excalidraw/overlays/prod
-  - gaseous/
+  - ../../../apps/gaseous/overlays/prod
   - ../../../apps/homepage/overlays/prod
-  - jellyfin/
-  - metube/
-  - omni-tools/
+  - ../../../apps/jellyfin/overlays/prod
+  - ../../../apps/metube/overlays/prod
+  - ../../../apps/omni-tools/overlays/prod
   - paperless-ngx/
   - speedtest/
   # - release-paperless-ngx-data.yaml

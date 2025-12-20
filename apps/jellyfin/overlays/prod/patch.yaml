@@ -1,0 +1,19 @@
+apiVersion: helm.toolkit.fluxcd.io/v2
+kind: HelmRelease
+metadata:
+  name: excalidraw
+spec:
+  values:
+    image:
+      tag: ""
+    replicaCount: 1
+    ingress:
+      enabled: true
+      className: "nginx"
+      annotations: {}
+      hosts:
+        - host: jellyfin.shakir.cloud
+          paths:
+            - path: /
+              pathType: ImplementationSpecific
+      tls: []
