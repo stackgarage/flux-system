@@ -10,7 +10,7 @@ resources:
   - bentopdf/
   - carlogger/
   - deemix/
-  - ../../../apps/exacalidraw/overlays/prod
+  - ../../../apps/excalidraw/overlays/prod
   - gaseous/
   - homepage/
   - jellyfin/
