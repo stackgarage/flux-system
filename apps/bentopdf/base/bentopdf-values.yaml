@@ -2,18 +2,10 @@ app:
   name: bentopdf
   image:
     repository: bentopdf/bentopdf
-    tag: latest
     pullPolicy: IfNotPresent
-
-  replicaCount: 1
 
   containerPort: 8080
 
   service:
     port: 80
     targetPort: 8080
-
-ingress:
-  enabled: true
-  host: bentopdf.shakir.cloud
-  ingressClassName: nginx
