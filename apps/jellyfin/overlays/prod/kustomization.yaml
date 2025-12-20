@@ -6,6 +6,8 @@ resources:
 
 patches:
   - target:
+      group: helm.toolkit.fluxcd.io
+      version: v2
       kind: HelmRelease
       name: jellyfin
     path: patch.yaml
