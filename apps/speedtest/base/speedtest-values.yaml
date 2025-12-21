@@ -2,10 +2,8 @@ app:
   name: speedtest
   image:
     repository: henrywhitaker3/speedtest-tracker
-    tag: latest
     pullPolicy: IfNotPresent
 
-  replicaCount: 1
   containerPort: 80
 
   service:
@@ -25,18 +23,3 @@ app:
       value: "America/Los_Angeles"
     - name: OOKLA_EULA_GDPR
       value: "true"
-
-ingress:
-  enabled: true
-  host: speedtest.shakir.cloud
-  ingressClassName: nginx
-
-persistence:
-  enabled: true
-  size: 200Mi
-  accessMode: ReadWriteMany
-  reclaimPolicy: Retain
-  storageClassName: nfs-client
-  nfs:
-    server: synology.shakir.cloud
-    path: /volume1/k3s-main
