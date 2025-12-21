@@ -232,26 +232,26 @@ service:
   # -- Service port.
   port: 80
 
-ingress:
-  # -- Specifies whether ingress should be enabled.
-  enabled: true
-  # -- Ingress class name.
-  className: "nginx"
-  # -- Annotations to add to the ingress.
-  annotations: {}
-    # kubernetes.io/ingress.class: nginx
-    # kubernetes.io/tls-acme: "true"
-  # -- List of ingress hosts.
-  hosts:
-    - host: car.shakir.cloud
-      paths:
-        - path: /
-          pathType: ImplementationSpecific
-  # -- List of TLS configurations for the ingress.
-  tls: []
-  #  - secretName: lubelog-tls
-  #    hosts:
-  #      - lubelog.example.local
+# ingress:
+#   # -- Specifies whether ingress should be enabled.
+#   enabled: true
+#   # -- Ingress class name.
+#   className: "nginx"
+#   # -- Annotations to add to the ingress.
+#   annotations: {}
+#     # kubernetes.io/ingress.class: nginx
+#     # kubernetes.io/tls-acme: "true"
+#   # -- List of ingress hosts.
+#   hosts:
+#     - host: car.shakir.cloud
+#       paths:
+#         - path: /
+#           pathType: ImplementationSpecific
+#   # -- List of TLS configurations for the ingress.
+#   tls: []
+#   #  - secretName: lubelog-tls
+#   #    hosts:
+#   #      - lubelog.example.local
 
 resources: {}
   # We usually recommend not to specify default resources and to leave this as a conscious
