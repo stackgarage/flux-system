@@ -1,7 +1,7 @@
 app:
   name: speedtest
   image:
-    repository: henrywhitaker3/speedtest-tracker
+    repository: linuxserver/speedtest-tracker
     pullPolicy: IfNotPresent
 
   containerPort: 80
@@ -23,3 +23,5 @@ app:
       value: "America/Los_Angeles"
     - name: OOKLA_EULA_GDPR
       value: "true"
+    - name: DB_CONNECTION
+      value: sqlite

@@ -6,7 +6,7 @@ spec:
   values:
     app:
       image:
-        tag: latest
+        tag: v4.4.0
       replicaCount: 1
 
     ingress:

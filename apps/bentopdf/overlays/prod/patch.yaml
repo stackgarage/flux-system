@@ -6,7 +6,7 @@ spec:
   values:
     app:
       image:
-        tag: latest
+        tag: sha-370968e
       replicaCount: 1
     ingress:
       enabled: true
