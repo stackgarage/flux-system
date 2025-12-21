@@ -12,3 +12,13 @@ flux-config:
   - changed-files:
       - any-glob-to-any-file: "clusters/*/flux-system/*"
       - any-glob-to-any-file: "clusters/*/flux-system/**/*"
+
+flux-release:
+  - changed-files:
+      - any-glob-to-any-file: "apps/*/base/*"
+      - any-glob-to-any-file: "apps/*/base/**/*"
+
+flux-patch:
+  - changed-files:
+      - any-glob-to-any-file: "apps/*/overlays/*"
+      - any-glob-to-any-file: "apps/*/overlays/**/*"
