@@ -8,7 +8,7 @@ namespace: apps
 resources:
   - ../../../apps/actualbudget/overlays/prod
   - ../../../apps/bentopdf/overlays/prod
-  # - ../../../apps/carlogger/overlays/prod
+  - ../../../apps/carlogger/overlays/prod
   - ../../../apps/deemix/overlays/prod
   - ../../../apps/excalidraw/overlays/prod
   - ../../../apps/gaseous/overlays/prod
@@ -18,8 +18,7 @@ resources:
   - ../../../apps/omni-tools/overlays/prod
   - ../../../apps/paperless-ngx/overlays/prod
   - ../../../apps/speedtest/overlays/prod
-  # - release-paperless-ngx-data.yaml
-  # - release-karakeep.yaml
+  - ../../../apps/karakeep/overlays/prod
 
 patches:
   - target:
