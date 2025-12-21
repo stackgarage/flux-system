@@ -6,7 +6,7 @@ spec:
   values:
     app:
       image:
-        digest: sha256:95d528cb4f8d18e0fbdc42ae3d09b5c4a899bfbd6bb89eeaf94b904330d79714
+        tag: latest
       replicaCount: 1
     ingress:
       enabled: true
