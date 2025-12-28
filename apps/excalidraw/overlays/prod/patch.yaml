@@ -11,4 +11,4 @@ spec:
     ingress:
       enabled: true
       host: draw.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik 
