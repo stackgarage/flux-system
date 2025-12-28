@@ -9,7 +9,7 @@ spec:
     ingress:
       karakeep:
         enabled: true
-        className: "traefik"
+        className: "nginx"
         hosts:
           - host: karakeep.shakir.cloud
             paths:

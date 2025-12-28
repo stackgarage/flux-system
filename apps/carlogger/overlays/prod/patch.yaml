@@ -6,7 +6,7 @@ spec:
   values:
     ingress:
       enabled: true
-      className: "traefik"
+      className: "nginx"
       annotations: {}
       hosts:
         - host: car.shakir.cloud
