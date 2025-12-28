@@ -11,7 +11,7 @@ spec:
     ingress:
       enabled: true
       host: metube.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik
     persistence:
       enabled: true
       size: 200Mi
