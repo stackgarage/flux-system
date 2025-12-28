@@ -11,4 +11,4 @@ spec:
     ingress:
       enabled: true
       host: omnitools.shakir.cloud
-      ingressClassName: traefik
+      ingressClassName: nginx
