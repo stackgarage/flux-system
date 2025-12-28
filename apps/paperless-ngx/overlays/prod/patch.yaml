@@ -14,5 +14,5 @@ spec:
     ingress:
       enabled: true
       host: paperless.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik
       annotations: {}
