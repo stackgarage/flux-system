@@ -9,7 +9,7 @@ spec:
     replicaCount: 1
     ingress:
       enabled: true
-      className: "traefik"
+      className: "nginx"
       annotations: {}
       hosts:
         - host: jellyfin.shakir.cloud
