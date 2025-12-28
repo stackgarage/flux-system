@@ -11,5 +11,5 @@ spec:
     ingress:
       enabled: true
       host: bentopdf.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik
 
