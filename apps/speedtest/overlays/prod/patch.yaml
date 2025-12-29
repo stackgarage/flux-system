@@ -11,7 +11,7 @@ spec:
     ingress:
       enabled: true
       host: speedtest.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik
 
     persistence:
       enabled: true

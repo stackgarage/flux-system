@@ -12,7 +12,7 @@ spec:
     ingress:
       enabled: true
       host: deemix.shakir.cloud
-      ingressClassName: nginx
+      ingressClassName: traefik
 
     persistence:
       enabled: true
