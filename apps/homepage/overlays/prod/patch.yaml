@@ -8,7 +8,7 @@ spec:
     ingress:
       main:
         enabled: true
-        ingressClassName: "nginx"
+        ingressClassName: "traefik"
         hosts:
           - host: home.shakir.cloud
             paths:
