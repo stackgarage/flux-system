@@ -17,7 +17,7 @@ resources:
   - ../../../apps/metube/overlays/prod
   - ../../../apps/omni-tools/overlays/prod
   - ../../../apps/paperless-ngx/overlays/prod
-  - ../../../apps/speedtest/overlays/prod
+  # - ../../../apps/speedtest/overlays/prod
   - ../../../apps/uptime/overlays/prod
   # - ../../../apps/karakeep/overlays/prod
 
