@@ -7,7 +7,7 @@ alertmanager:
   fullnameOverride: alertmanager
   ingress:
     enabled: true
-    ingressClassName: "nginx"
+    ingressClassName: "traefik"
     hosts:
       - alertmanager.shakir.cloud
   # show logs in alerts
@@ -56,7 +56,7 @@ grafana:
 
   ingress:
     enabled: true
-    ingressClassName: "nginx"
+    ingressClassName: "traefik"
     hosts:
       - grafana.shakir.cloud
   # allows pod auto-discovery when a pod is labeled with: metadata.labels.grafana_dashboard: "1"
@@ -99,7 +99,7 @@ prometheus:
   enabled: true
   ingress:
     enabled: true
-    ingressClassName: "nginx"
+    ingressClassName: "traefik"
     hosts:
       - prometheus.shakir.cloud
   prometheusSpec:
