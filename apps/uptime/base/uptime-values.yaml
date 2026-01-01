@@ -1,0 +1,17 @@
+app:
+  name: excalidraw
+  image:
+    repository: louislam/uptime-kuma
+    pullPolicy: IfNotPresent
+
+  replicaCount: 1
+
+  containerPort: 3001
+
+  service:
+    port: 80
+    targetPort: 3001
+
+  volumeMounts:
+    - mountPath: /app/data
+      subPath: data
