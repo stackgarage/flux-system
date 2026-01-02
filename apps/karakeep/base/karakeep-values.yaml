@@ -130,13 +130,15 @@ persistence:
     accessMode: ReadWriteOnce
     storageClass: nfs-client
     size: 100Mi
+
   chrome-tmp:
+    enabled: true
     type: emptyDir
     advancedMounts:
       chrome:
         chrome:
           - path: /tmp
-            readonly: false
+            readOnly: false
 
 meilisearch:
   auth:
