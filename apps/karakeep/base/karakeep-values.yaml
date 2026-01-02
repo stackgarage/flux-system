@@ -126,6 +126,7 @@ secrets:
 persistence:
   chrome-tmp:
     type: persistentVolumeClaim
+    accessMode: ReadWriteOnce
     storageClass: nfs-client
     advancedMounts:
       chrome:
