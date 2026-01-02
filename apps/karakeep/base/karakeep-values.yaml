@@ -124,10 +124,14 @@ secrets:
       MEILI_MASTER_KEY: "{{ default (randAlphaNum 30) .Values.meilisearchMasterKey }}"
 
 persistence:
-  chrome-tmp:
+  config:
+    enabled: true
     type: persistentVolumeClaim
     accessMode: ReadWriteOnce
     storageClass: nfs-client
+    size: 100Mi
+  chrome-tmp:
+    type: emptyDir
     advancedMounts:
       chrome:
         chrome:
