@@ -6,6 +6,7 @@
 applicationProtocol: http
 applicationSecretKey: ~
 meilisearchMasterKey: ~
+applicationHost: karakeep.shakir.cloud
 
 controllers:
   karakeep:
