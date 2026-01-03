@@ -7,7 +7,6 @@ namespace: apps
 
 resources:
   - ../../../apps/actualbudget/overlays/prod
-  - ../../../apps/beaverhabits/overlays/prod
   - ../../../apps/bentopdf/overlays/prod
   - ../../../apps/carlogger/overlays/prod
   - ../../../apps/deemix/overlays/prod
