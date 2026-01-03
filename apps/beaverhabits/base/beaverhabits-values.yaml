@@ -1,0 +1,27 @@
+app:
+  name: beaverhabits
+  image:
+    repository: daya0576/beaverhabits
+    pullPolicy: IfNotPresent
+
+  containerPort: 8080
+
+  service:
+    port: 80
+    targetPort: 8080
+
+  volumeMounts:
+    - mountPath: /app/.user/
+      subPath: beaver
+
+  env:
+    - name: PUID
+      value: "1000"
+    - name: PGID
+      value: "1000"
+    - name: HABITS_STORAGE
+      value: "USER_DISK"
+    - name: INDEX_HABIT_DATE_COLUMNS
+      value: 5
+    - name: ENABLE_IOS_STANDALONE
+      value: true
