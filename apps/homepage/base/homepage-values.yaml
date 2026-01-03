@@ -149,6 +149,10 @@ config:
 
       - Utilities:
           - Ntopng:
+              icon: sh-uptime-kume
+              href: https://uptime.shakir.cloud
+              description: Uptime Monitoring
+          - Ntopng:
               icon: mdi-security-network
               href: https://ntopng.shakir.cloud
               description: NtopNG Network Monitoring
