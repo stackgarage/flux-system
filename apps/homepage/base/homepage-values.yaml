@@ -148,7 +148,7 @@ config:
               description: Karakeep Bookmarks Manager
 
       - Utilities:
-          - Ntopng:
+          - Uptime:
               icon: sh-uptime-kume
               href: https://uptime.shakir.cloud
               description: Uptime Monitoring
@@ -160,10 +160,10 @@ config:
               icon: sh-bentopdf
               href: https://bentopdf.shakir.cloud
               description: PDF Document Management
-          - Speedtest:
-              icon: sh-speedtest
-              href: https://speedtest.shakir.cloud
-              description: Internet Speed Test
+          - Renovate:
+              icon: sh-mend-renovate
+              href: https://developer.mend.io/github/tinycloud-labs
+              description: Renovate Dashboard
           - LubeLogger:
               icon: sh-lubelogger
               href: https://car.shakir.cloud
