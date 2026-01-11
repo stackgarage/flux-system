@@ -18,7 +18,7 @@ spec:
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
-      storageClassName: nfs-client
+#      storageClassName: nfs-client
       nfs:
         server: synology.shakir.cloud
-        path: /volume1/k3s-main
+        path: /volume1/k3s-main/speedtest
