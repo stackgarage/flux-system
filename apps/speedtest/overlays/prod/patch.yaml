@@ -6,7 +6,7 @@ spec:
   values:
     app:
       image:
-        tag: 1.13.3
+        tag: latest
       replicaCount: 1
     ingress:
       enabled: true
@@ -18,7 +18,7 @@ spec:
       size: 200Mi
       accessMode: ReadWriteMany
       reclaimPolicy: Retain
-#      storageClassName: nfs-client
+      storageClassName: nfs-client
       nfs:
         server: synology.shakir.cloud
-        path: /volume1/k3s-main/speedtest
+        path: /volume1/k3s-main
