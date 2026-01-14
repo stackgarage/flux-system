@@ -4,9 +4,9 @@ kind: Kustomization
 namespace: monitoring
 
 resources:
-  - prometheus
-  - loki-stack
-  - dashboards
+  # - prometheus
+  # - loki-stack
+  # - dashboards
 
 patches:
   - target:
