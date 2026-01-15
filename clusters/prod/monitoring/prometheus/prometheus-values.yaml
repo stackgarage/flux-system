@@ -23,7 +23,7 @@ alertmanager:
 grafana:
   enabled: true
   fullnameOverride: grafana
-  defaultDashboardsEnabled: true
+  defaultDashboardsEnabled: false # must be disabled if you set a default datasources below
   defaultDashboardsTimezone: "America/Los_Angeles"
 
   grafana.ini:
