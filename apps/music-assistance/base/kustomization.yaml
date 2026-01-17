@@ -1,0 +1,10 @@
+resources:
+  - release.yaml
+
+configMapGenerator:
+  - name: music-assistance-values
+    files:
+      - values.yaml=music-assistance-values.yaml
+
+generatorOptions:
+  disableNameSuffixHash: true
