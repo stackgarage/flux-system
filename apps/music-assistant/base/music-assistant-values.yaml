@@ -6,7 +6,7 @@ app:
     tag: latest
   service:
     port: 80
-    targetPort: 6595
+    targetPort: 80
 
   volumeMounts:
     - mountPath: /data
