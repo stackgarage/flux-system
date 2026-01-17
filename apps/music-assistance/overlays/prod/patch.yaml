@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: music-assistance
+  name: music-assistant
 spec:
   values:
     app:
@@ -11,7 +11,7 @@ spec:
 
     ingress:
       enabled: true
-      host: music-assistance.shakir.cloud
+      host: music-assistant.shakir.cloud
       ingressClassName: traefik
 
     persistence:
@@ -21,4 +21,4 @@ spec:
       reclaimPolicy: Retain
       nfs:
         server: synology.shakir.cloud
-        path: /volume1/k3s-main/music-assistance
+        path: /volume1/k3s-main/music-assistant

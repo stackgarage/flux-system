@@ -2,9 +2,9 @@ resources:
   - release.yaml
 
 configMapGenerator:
-  - name: music-assistance-values
+  - name: music-assistant-values
     files:
-      - values.yaml=music-assistance-values.yaml
+      - values.yaml=music-assistant-values.yaml
 
 generatorOptions:
   disableNameSuffixHash: true

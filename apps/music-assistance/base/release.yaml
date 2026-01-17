@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: music-assistance
+  name: music-assistant
   namespace: default
 
 spec:
   interval: 1h0m0s
-  releaseName: music-assistance
+  releaseName: music-assistant
 
   chart:
     spec:
@@ -20,5 +20,5 @@ spec:
 
   valuesFrom:
     - kind: ConfigMap
-      name: music-assistance-values
+      name: music-assistant-values
       valuesKey: values.yaml

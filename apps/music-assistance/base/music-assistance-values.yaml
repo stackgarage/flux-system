@@ -1,5 +1,5 @@
 app:
-  name: music-assistance
+  name: music-assistant
   image:
     repository: ghcr.io/music-assistant/server
     pullPolicy: IfNotPresent
