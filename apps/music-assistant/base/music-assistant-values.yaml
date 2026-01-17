@@ -4,9 +4,12 @@ app:
     repository: ghcr.io/music-assistant/server
     pullPolicy: IfNotPresent
     tag: latest
+
+  containerPort: 8095
+
   service:
     port: 80
-    targetPort: 80
+    targetPort: 8095
 
   volumeMounts:
     - mountPath: /data
