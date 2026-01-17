@@ -1,0 +1,17 @@
+app:
+  name: music-assistance
+  image:
+    repository: ghcr.io/music-assistant/server
+    pullPolicy: IfNotPresent
+
+  service:
+    port: 80
+    targetPort: 6595
+
+  volumeMounts:
+    - mountPath: /data
+      subPath: data
+
+  env:
+    - name: LOG_LEVEL
+      value: info
