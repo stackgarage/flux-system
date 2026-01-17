@@ -3,7 +3,7 @@ app:
   image:
     repository: ghcr.io/music-assistant/server
     pullPolicy: IfNotPresent
-
+    tag: latest
   service:
     port: 80
     targetPort: 6595
