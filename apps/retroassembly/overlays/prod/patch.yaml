@@ -19,4 +19,4 @@ spec:
       reclaimPolicy: Retain
       nfs:
         server: synology.shakir.cloud
-        path: /volume1/k3s-main/actualbudget
+        path: /volume1/k3s-main/retroassembly/library
