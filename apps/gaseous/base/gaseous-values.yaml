@@ -46,24 +46,23 @@ database:
   port: 3306
 
   image:
-    repository: shakir85/bitnami-mariadb
+    repository: mariadb
     tag: latest
     pullPolicy: IfNotPresent
 
   volumeMounts:
-    - mountPath: /bitnami/mariadb
-      subPath: gsdb
+    - mountPath: /var/lib/mysql
+      subPath: mariadb
 
   env:
-    - name: ALLOW_EMPTY_PASSWORD
-      value: "yes"
+    # - name: ALLOW_EMPTY_PASSWORD
+    #   value: "yes"
     - name: MARIADB_ROOT_PASSWORD
       value: gaseous
     - name: MARIADB_USER
       value: gaseous
     - name: MARIADB_PASSWORD
       value: gaseous
-    - name: MARIADB_DISABLE_CHOWN
-      value: "yes"
+    # - name: MARIADB_DISABLE_CHOWN
+    #   value: "yes"
   replicas: 1
-  port: 80
