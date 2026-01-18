@@ -1,0 +1,15 @@
+app:
+  name: retroassembly
+  image:
+    repository: arianrhodsandlot/retroassembly
+    pullPolicy: IfNotPresent
+
+  containerPort: 8000
+
+  service:
+    port: 80
+    targetPort: 8000
+
+  volumeMounts:
+    - mountPath: /app/data
+      subPath: /app/data
