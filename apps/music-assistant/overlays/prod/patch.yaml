@@ -5,7 +5,6 @@ metadata:
 spec:
   values:
     app:
-      tag: latest
       replicaCount: 1
 
     ingress:
