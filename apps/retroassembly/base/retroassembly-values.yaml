@@ -12,4 +12,4 @@ app:
 
   volumeMounts:
     - mountPath: /app/data
-      subPath: /app/data
+      subPath: data
