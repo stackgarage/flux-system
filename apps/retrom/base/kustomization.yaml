@@ -2,9 +2,9 @@ resources:
   - release.yaml
 
 configMapGenerator:
-  - name: retroassembly-values
+  - name: retrom-values
     files:
-      - values.yaml=retroassembly-values.yaml
+      - values.yaml=retrom-values.yaml
 
 generatorOptions:
   disableNameSuffixHash: true

@@ -1,7 +1,7 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: retroassembly
+  name: retrom
 spec:
   values:
     app:
@@ -19,4 +19,4 @@ spec:
       reclaimPolicy: Retain
       nfs:
         server: synology.shakir.cloud
-        path: /volume1/k3s-main/retroassembly/library
+        path: /volume1/k3s-main/retrom

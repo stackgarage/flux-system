@@ -1,0 +1,18 @@
+app:
+  name: retrom
+  image:
+    repository: ghcr.io/jmberesford/retrom-service
+    pullPolicy: IfNotPresent
+
+  containerPort: 5101
+
+  service:
+    port: 80
+    targetPort: 5101
+
+  volumeMounts:
+    - mountPath: /app/library
+      subPath: library
+  volumeMounts:
+    - mountPath: /app/config
+      subPath: config

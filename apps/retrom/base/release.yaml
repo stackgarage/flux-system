@@ -1,12 +1,12 @@
 apiVersion: helm.toolkit.fluxcd.io/v2
 kind: HelmRelease
 metadata:
-  name: retroassembly
+  name: retrom
   namespace: default
 
 spec:
   interval: 1h0m0s
-  releaseName: retroassembly
+  releaseName: retrom
 
   chart:
     spec:
@@ -20,5 +20,5 @@ spec:
 
   valuesFrom:
     - kind: ConfigMap
-      name: retroassembly-values
+      name: retrom-values
       valuesKey: values.yaml
