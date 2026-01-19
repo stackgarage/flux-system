@@ -6,7 +6,7 @@ spec:
   values:
     paperlessngx:
       image:
-        tag: 2.20.3
+        tag: 2.20.4
       replicaCount: 1
     redis:
       image:
