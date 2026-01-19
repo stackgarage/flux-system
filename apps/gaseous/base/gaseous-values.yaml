@@ -54,6 +54,14 @@ database:
     - mountPath: /var/lib/mysql
       subPath: mariadb
 
+  securityContext:
+    enabled: true
+    runAsUser: 999
+    runAsGroup: 999
+    runAsNonRoot: true
+    fsGroup: 999
+    fsGroupChangePolicy: OnRootMismatch
+
   env:
     # - name: ALLOW_EMPTY_PASSWORD
     #   value: "yes"
