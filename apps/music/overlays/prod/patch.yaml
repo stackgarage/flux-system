@@ -10,6 +10,7 @@ spec:
     ingress:
       enabled: true
       host: music.shakir.cloud
+      path: /web
       ingressClassName: traefik
 
     persistence:
