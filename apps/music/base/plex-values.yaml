@@ -55,4 +55,4 @@ app:
     - name: ALLOWED_NETWORKS
       value: 10.10.50.0/24
     - name: PLEX_CLAIM
-      value: claim-Q5PyPdQzwyz7-jQdXsad
+      value: "claim-huJ321jrj4WkAFnGXfai"
