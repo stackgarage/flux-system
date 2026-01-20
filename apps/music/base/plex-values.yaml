@@ -54,3 +54,5 @@ app:
       value: https://music.shakir.cloud:32400
     - name: ALLOWED_NETWORKS
       value: 10.10.50.0/24
+    - name: PLEX_CLAIM
+      value: claim-Q5PyPdQzwyz7-jQdXsad
