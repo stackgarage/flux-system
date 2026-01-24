@@ -37,6 +37,10 @@ app:
       - port: 32414
         protocol: UDP
 
+  resources:
+   limits:
+     memory: 3Gi
+
   volumeMounts:
     - mountPath: /config
       subPath: config
