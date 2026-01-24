@@ -112,6 +112,10 @@ config:
               icon: plex
               href: https://plex.shakir.cloud/web/index.html
               description: Plex Media Server
+          - Music:
+              icon: plex
+              href: https://music.shakir.cloud/web/index.html
+              description: Plex For Music Only
           - Metube:
               icon: metube
               href: https://metube.shakir.cloud
@@ -124,12 +128,9 @@ config:
               icon: jellyfin
               href: https://jellyfin.shakir.cloud
               description: Jellyfin Media Server
-          - Gaseous:
-              icon: sh-gaseous
-              href: https://games.shakir.cloud
-              description: Gaseous Gaming Server
 
-      - Productivity:
+
+      - Other:
           - Paperless:
               icon: paperless
               href: https://paperless.shakir.cloud
@@ -146,10 +147,14 @@ config:
               icon: sh-karakeep
               href: https://karakeep.shakir.cloud
               description: Karakeep Bookmarks Manager
+          - Gaseous:
+              icon: sh-gaseous
+              href: https://games.shakir.cloud
+              description: Gaseous Gaming Server
 
       - Utilities:
           - Uptime:
-              icon: sh-uptime-kume
+              icon: sh-uptime-kuma
               href: https://uptime.shakir.cloud
               description: Uptime Monitoring
           - Ntopng:
