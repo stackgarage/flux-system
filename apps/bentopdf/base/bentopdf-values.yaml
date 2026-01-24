@@ -1,7 +1,7 @@
 app:
   name: bentopdf
   image:
-    repository: bentopdf/bentopdf
+    repository: ghcr.io/alam00000/bentopdf
     pullPolicy: IfNotPresent
 
   containerPort: 8080

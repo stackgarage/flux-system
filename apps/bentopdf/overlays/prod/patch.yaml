@@ -6,10 +6,9 @@ spec:
   values:
     app:
       image:
-        tag: sha-370968e
+        tag: sha-fb8c8c0
       replicaCount: 1
     ingress:
       enabled: true
       host: bentopdf.shakir.cloud
       ingressClassName: traefik
-
