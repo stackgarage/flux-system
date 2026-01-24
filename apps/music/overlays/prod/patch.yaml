@@ -9,7 +9,7 @@ spec:
 
     ingress:
       enabled: true
-      path: /web
+      path: /
       port: 32400
       host: music.shakir.cloud
       ingressClassName: traefik
