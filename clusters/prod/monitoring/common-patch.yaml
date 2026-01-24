@@ -5,6 +5,3 @@ metadata:
 spec:
   values:
     namespace: "monitoring"
-
-# metadata:
-#   namespace: flux-system
