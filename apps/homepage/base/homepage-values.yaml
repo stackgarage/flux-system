@@ -112,10 +112,6 @@ config:
               icon: plex
               href: https://plex.shakir.cloud/web/index.html
               description: Plex Media Server
-          - Music:
-              icon: plex
-              href: https://music.shakir.cloud/web/index.html
-              description: Plex For Music Only
           - Metube:
               icon: metube
               href: https://metube.shakir.cloud
