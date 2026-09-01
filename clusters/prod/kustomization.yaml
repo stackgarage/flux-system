@@ -8,6 +8,7 @@ resources:
   - flux-system
   - helm-repos.yaml
   - csi-driver-nfs.yaml
+  - sm-operator.yaml
   - metallb.yaml
   - metallb-config.yaml
   - bw-secrets.yaml
