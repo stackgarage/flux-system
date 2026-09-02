@@ -16,4 +16,4 @@ spec:
       sourceRef:
         kind: HelmRepository
         name: bw-secrets-manager
-        namespace: flux-system
+        namespace: sm-operator-system
